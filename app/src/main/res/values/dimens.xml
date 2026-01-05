@@ -5,4 +5,8 @@
     <dimen name="alphabet_recycler_margin_start">320dp</dimen>
     <dimen name="text_large">18sp</dimen>
     <dimen name="text_small">12sp</dimen>
+    <dimen name="app_padding_vertical">8dp</dimen>
+    <dimen name="time_size">30sp</dimen>
+    <dimen name="date_size">16sp</dimen>
+    <dimen name="home_app_padding_vertical">12dp</dimen>
 </resources>

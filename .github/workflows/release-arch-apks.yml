@@ -141,16 +141,28 @@ jobs:
             echo "No upload URL available; skipping release upload"
             exit 0
           fi
+          # The upload_url from the API is templated (contains `{?name,label}`) — strip that
+          UPLOAD_URL="${UPLOAD_URL%\{*}}"
           echo "Uploading APKs to release via: $UPLOAD_URL"
           shopt -s globstar
           for f in artifacts/**/*.apk; do
             if [ -f "$f" ]; then
               NAME=$(basename "$f")
               echo "Uploading $NAME"
-              curl -sS -X POST \
+              # upload and capture HTTP status and response
+              HTTP=$(curl -sS -X POST \
                 -H "Authorization: Bearer $GITHUB_TOKEN" \
                 -H "Content-Type: application/vnd.android.package-archive" \
-                --data-binary @"$f" "${UPLOAD_URL}?name=$NAME"
+                --data-binary @"$f" \
+                -o /tmp/upload_resp -w "%{http_code}" "${UPLOAD_URL}?name=$NAME" || true)
+              cat /tmp/upload_resp || true
+              echo "HTTP status: $HTTP"
+              if [ "$HTTP" -ge 200 ] && [ "$HTTP" -lt 300 ]; then
+                echo "Uploaded $NAME"
+              else
+                echo "Upload failed for $NAME with HTTP $HTTP"
+                exit 1
+              fi
             fi
           done
 

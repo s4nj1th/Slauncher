@@ -32,21 +32,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v2
-        with:
-          api-level: 33
-          build-tools: "33.0.2"
-
-      - name: Accept Android SDK licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+      - name: Install Android SDK command-line tools
+        env:
+          ANDROID_SDK_ROOT: ${{ runner.temp }}/android-sdk
+        run: |
+          set -eux
+          SDK_ROOT="$ANDROID_SDK_ROOT"
+          rm -rf "$SDK_ROOT"
+          mkdir -p "$SDK_ROOT/cmdline-tools"
+          # download a recent commandline tools bundle
+          curl -L -o /tmp/cmdline.zip https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+          unzip -q /tmp/cmdline.zip -d "$SDK_ROOT/cmdline-tools"
+          mv "$SDK_ROOT/cmdline-tools/cmdline-tools" "$SDK_ROOT/cmdline-tools/latest"
+          export PATH="$SDK_ROOT/cmdline-tools/latest/bin:$PATH"
+          yes | sdkmanager --sdk_root="$SDK_ROOT" --licenses
+          sdkmanager --sdk_root="$SDK_ROOT" "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+        shell: bash
 
       - name: Build app bundle (release)
         id: build_bundle
         run: |
-          set -e
-          ./gradlew :app:bundleRelease --no-daemon --stacktrace || echo "bundleRelease failed" && exit 0
-        continue-on-error: true
+          set -euo pipefail
+          ./gradlew :app:bundleRelease --no-daemon --stacktrace
 
       - name: Fallback build app bundle (debug) if release not built
         if: steps.build_bundle.outcome != 'success'
@@ -107,6 +114,45 @@ jobs:
           done
           echo "Artifacts prepared:"
           ls -R artifacts || true
+
+      - name: Create GitHub Release for tag (if push on tag)
+        id: create_release
+        uses: actions/create-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          body: CI build for ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload APKs to GitHub Release
+        if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_UPLOAD_URL: ${{ github.event.release.upload_url }}
+          CREATE_UPLOAD_URL: ${{ steps.create_release.outputs.upload_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          UPLOAD_URL="${RELEASE_UPLOAD_URL:-$CREATE_UPLOAD_URL}"
+          if [ -z "$UPLOAD_URL" ]; then
+            echo "No upload URL available; skipping release upload"
+            exit 0
+          fi
+          echo "Uploading APKs to release via: $UPLOAD_URL"
+          shopt -s globstar
+          for f in artifacts/**/*.apk; do
+            if [ -f "$f" ]; then
+              NAME=$(basename "$f")
+              echo "Uploading $NAME"
+              curl -sS -X POST \
+                -H "Authorization: Bearer $GITHUB_TOKEN" \
+                -H "Content-Type: application/vnd.android.package-archive" \
+                --data-binary @"$f" "${UPLOAD_URL}?name=$NAME"
+            fi
+          done
 
       - name: Upload APK artifacts
         uses: actions/upload-artifact@v4

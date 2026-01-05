@@ -1,0 +1,113 @@
+name: Build Arch APKs on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-arch-apks:
+    name: Build AAB and per-ABI APKs
+    runs-on: ubuntu-latest
+    env:
+      JAVA_HOME_21: ${{ runner.temp }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 33
+          build-tools: "33.0.2"
+
+      - name: Accept Android SDK licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
+      - name: Build app bundle (release)
+        id: build_bundle
+        run: |
+          set -e
+          ./gradlew :app:bundleRelease --no-daemon --stacktrace || echo "bundleRelease failed" && exit 0
+        continue-on-error: true
+
+      - name: Fallback build app bundle (debug) if release not built
+        if: steps.build_bundle.outcome != 'success'
+        run: |
+          ./gradlew :app:bundleDebug --no-daemon --stacktrace
+
+      - name: Locate generated AAB
+        id: find_aab
+        run: |
+          echo "Looking for app bundle..."
+          BUNDLE_PATH=$(find app/build -type f -name "*.aab" | head -n 1 || true)
+          if [ -z "$BUNDLE_PATH" ]; then
+            echo "No .aab found!";
+            exit 1;
+          fi
+          echo "bundle_path=$BUNDLE_PATH" >> $GITHUB_OUTPUT
+
+      - name: Download bundletool
+        run: |
+          curl -L -o bundletool.jar https://github.com/google/bundletool/releases/latest/download/bundletool-all.jar
+
+      - name: Generate per-ABI APK sets and extract APKs
+        run: |
+          set -e
+          mkdir -p apks out
+          AAB=${{ steps.find_aab.outputs.bundle_path }}
+          echo "Using AAB: $AAB"
+
+          ABIS=("arm64-v8a" "armeabi-v7a" "x86" "x86_64")
+          for ABI in "${ABIS[@]}"; do
+            echo "Building APKS for ABI: $ABI"
+            DEV_JSON="device-${ABI}.json"
+            echo "{\"supportedAbis\":[\"$ABI\"]}" > $DEV_JSON
+
+            OUT_APKS="apks/app-${ABI}.apks"
+            java -jar bundletool.jar build-apks --bundle="$AAB" --output="$OUT_APKS" --device-spec="$DEV_JSON" --mode=default || true
+
+            # extract produced apks (if any)
+            EXTRACT_DIR="out/${ABI}"
+            mkdir -p "$EXTRACT_DIR"
+            if [ -f "$OUT_APKS" ]; then
+              java -jar bundletool.jar extract-apks --apks="$OUT_APKS" --output-dir="$EXTRACT_DIR" || true
+            else
+              echo "No .apks produced for $ABI"
+            fi
+          done
+
+      - name: Collect APK artifacts
+        run: |
+          mkdir -p artifacts
+          # Copy any extracted APKs to artifacts/ABI
+          for d in out/*; do
+            if [ -d "$d" ]; then
+              ABI=$(basename "$d")
+              mkdir -p artifacts/$ABI
+              find "$d" -maxdepth 1 -type f -name "*.apk" -exec cp {} artifacts/$ABI/ \;
+            fi
+          done
+          echo "Artifacts prepared:"
+          ls -R artifacts || true
+
+      - name: Upload APK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: arch-apks
+          path: artifacts

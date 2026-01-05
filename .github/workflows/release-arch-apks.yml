@@ -3,13 +3,15 @@ name: Build Arch APKs on Release
 on:
   release:
     types: [published]
+  push:
+    tags:
+      - "v*"
+      - "v*.*.*"
 
 jobs:
   build-arch-apks:
     name: Build AAB and per-ABI APKs
     runs-on: ubuntu-latest
-    env:
-      JAVA_HOME_21: ${{ runner.temp }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

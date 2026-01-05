@@ -37,29 +37,29 @@ jobs:
       - name: Build gradle project
         run: ./gradlew build --no-daemon --stacktrace
 
-      - name: Build apk debug project (APK) - ${{ env.main_project_module }} module
+      - name: Build apk debug project (APK)
         run: ./gradlew :${{ env.main_project_module }}:assembleDebug --no-daemon --stacktrace
 
-      - name: Build apk release project (APK) - ${{ env.main_project_module }} module
+      - name: Build apk release project (APK)
         run: ./gradlew :${{ env.main_project_module }}:assembleRelease --no-daemon --stacktrace
 
-      - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
+      - name: Build app bundle release (AAB)
         run: ./gradlew :${{ env.main_project_module }}:bundleRelease --no-daemon --stacktrace
 
-      - name: Upload APK Debug - ${{ env.repository_name }}
+      - name: Upload APK Debug
         uses: actions/upload-artifact@v4
         with:
-          name: "${{ env.date_today }} - APKs debug - ${{ env.repository_name }}"
+          name: "APKs debug"
           path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
-      - name: Upload APK Release - ${{ env.repository_name }}
+      - name: Upload APK Release
         uses: actions/upload-artifact@v4
         with:
-          name: "${{ env.date_today }} - APKs release - ${{ env.repository_name }}"
+          name: "APKs release"
           path: ${{ env.main_project_module }}/build/outputs/apk/release/
 
-      - name: Upload AAB (App Bundle) Release - ${{ env.repository_name }}
+      - name: Upload AAB (App Bundle) Release
         uses: actions/upload-artifact@v4
         with:
-          name: "${{ env.date_today }} - AAB release - ${{ env.repository_name }}"
+          name: "AAB release"
           path: ${{ env.main_project_module }}/build/outputs/bundle/release/

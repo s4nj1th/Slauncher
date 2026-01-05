@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Turkish -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Uygulama</string>
     <string name="set_as_default_launcher">Varsayılan başlatıcı olarak ayarla</string>
     <string name="set_as_default_launcher_u"><u>Varsayılan başlatıcı olarak ayarla</u></string>
@@ -137,4 +136,4 @@
     <string name="new_year_wish_1">Ocak ayının nasıl geçtiği önemli değil. Her zamankinden daha iyisini yapmak için hala yılın geri kalanı var.</string>
     <string name="cheers">Şerefe!</string>
     <string name="notification_bar">Bildirim çubuğu</string>
-</resources><!-- Turkish -->
+</resources>

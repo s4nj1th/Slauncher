@@ -77,9 +77,7 @@
         \n\nIf you\'re finding Slauncher useful, could you please leave a 5-star review? It\'ll mean the world to us. Thank you!</string>
     <string name="share_message">We need your help! We believe everyone should know about Slauncher and its benefits, but we can\'t do it alone.
         \n\nCould you please share Slauncher with your friends, family, and followers? Thank you for your support! ❤</string>
-    <!--    <string name="share_message">Your monthly reminder - you should use your phone, not the other way round. Stay strong. You\'re doing great!-->
-    <!--         \n\nIf you have a moment to spare, could you please share Slauncher with others? Slauncher needs people. More importantly, people need Slauncher.</string>-->
-    <string name="keyboard_message">Hi, keyboard is the fastest way to find and launch apps in Slauncher. Can we request you to keep this On for a few more days and then decide?
+            <string name="keyboard_message">Hi, keyboard is the fastest way to find and launch apps in Slauncher. Can we request you to keep this On for a few more days and then decide?
         \n\nThe choice is always yours.</string>
     <string name="digital_wellbeing_message">If you want to set time limits for certain apps, Digital Wellbeing feature of Android can help you do it.           Please search for Digital Wellbeing in your phone settings and enable it.</string>
     <string name="app_usage_message">To show/hide your screen time on the home screen, please allow or disallow the app usage permission.

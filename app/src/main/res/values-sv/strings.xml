@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Swedish -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">App</string>
     <string name="set_as_default_launcher">Ange som förvald startskärmsapp</string>
     <string name="set_as_default_launcher_u"><u>Ange som förvald startskärmsapp</u></string>
@@ -135,4 +134,4 @@
     <string name="new_year_wish_1">Det spelar ingen roll hur januari gick. Du har fortfarande resten av året på dig att göra bättre ifrån dig än någonsin.</string>
     <string name="cheers">Skål!</string>
     <string name="notification_bar">Aviseringsfält</string>
-</resources><!-- Swedish -->
+</resources>

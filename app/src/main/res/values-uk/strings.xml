@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Ukrainian -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Додаток</string>
     <string name="set_as_default_launcher">Зробити лаунчером за замовчування</string>
     <string name="set_as_default_launcher_u"><u>Зробити лаунчером за замовчування</u></string>
@@ -137,4 +136,4 @@
     <string name="new_year_wish_1">" Неважливо, як пройшов січень. У вас ще є решта року, щоб досягти успіху, як ніколи раніше."</string>
     <string name="cheers">будьмо!</string>
     <string name="notification_bar">Панель сповіщень</string>
-</resources><!-- Ukrainian -->
+</resources>

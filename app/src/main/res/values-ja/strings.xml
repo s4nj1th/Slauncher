@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Japanese -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">アプリ</string>
     <string name="set_as_default_launcher">デフォルトのランチャーとして設定</string>
     <string name="set_as_default_launcher_u"><u>デフォルトのランチャーとして設定</u></string>
@@ -136,4 +135,4 @@
     <string name="new_year_wish_1">1月がどうだったかは関係ありません。これまで以上に良い結果を出すために、まだ今年の残りの期間があります。</string>
     <string name="cheers">乾杯!</string>
     <string name="notification_bar">通知バー</string>
-</resources> <!-- Japanese -->
+</resources> 

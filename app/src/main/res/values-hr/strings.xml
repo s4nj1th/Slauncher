@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Croatian -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Aplikacija</string>
     <string name="set_as_default_launcher">Postavi kao zadani pokretač</string>
     <string name="set_as_default_launcher_u"><u>Postavi kao zadani pokretač</u></string>
@@ -135,4 +134,4 @@
     <string name="new_year_wish_1">Nije važno kako je prošao siječanj. Još uvijek imate ostatak godine da budete bolji nego ikad.</string>
     <string name="cheers">Živjeli!</string>
     <string name="notification_bar">Traka obavijesti</string>
-</resources><!-- Croatian -->
+</resources>

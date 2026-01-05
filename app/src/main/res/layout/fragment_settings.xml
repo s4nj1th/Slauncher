@@ -122,8 +122,7 @@
                         android:paddingEnd="8dp"
                         tools:text="@string/_8" />
 
-                    <!-- Home apps numbers layout-->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/appsNumSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -255,8 +254,7 @@
                         android:padding="8dp"
                         android:text="@string/on" />
 
-                    <!-- date time layout-->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/dateTimeSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -337,8 +335,7 @@
                         android:padding="8dp"
                         android:text="@string/left" />
 
-                    <!-- alignment layout-->
-                    <HorizontalScrollView
+                                        <HorizontalScrollView
                         android:id="@+id/alignmentSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -547,8 +544,7 @@
                         android:padding="8dp"
                         android:text="@string/dark" />
 
-                    <!-- theme color select layout-->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/appThemeSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -627,8 +623,7 @@
                         android:padding="8dp"
                         android:text="@string/libre_baskerville" />
 
-                    <!-- font select layout -->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/fontSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -720,8 +715,7 @@
                         android:paddingEnd="8dp"
                         tools:text="@string/_8" />
 
-                    <!-- Text sizes layout-->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/textSizesLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -950,8 +944,7 @@
                         android:padding="8dp"
                         tools:text="@string/search" />
 
-                    <!-- Swipe down select layout-->
-                    <LinearLayout
+                                        <LinearLayout
                         android:id="@+id/swipeDownSelectLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

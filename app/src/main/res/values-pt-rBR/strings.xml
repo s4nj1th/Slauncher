@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Portuguese -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Aplicativo</string>
     <string name="set_as_default_launcher">Definir como launcher padrão</string>
     <string name="set_as_default_launcher_u"><u>Definir como launcher padrão</u></string>
@@ -136,4 +135,4 @@
     <string name="new_year_wish_1">Não importa como foi janeiro. Você ainda tem o resto do ano para se sair melhor do que nunca.</string>
     <string name="cheers">Saúde!</string>
     <string name="notification_bar">Barra de notificações</string>
-</resources><!-- Portuguese -->
+</resources>

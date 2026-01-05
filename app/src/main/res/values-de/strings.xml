@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- German -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">App</string>
     <string name="set_as_default_launcher">Als Standard-Launcher festlegen</string>
     <string name="set_as_default_launcher_u"><u>Als Standard-Launcher festlegen</u></string>

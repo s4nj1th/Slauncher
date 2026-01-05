@@ -22,11 +22,8 @@
 
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <!--        <item name="android:enforceStatusBarContrast">false</item>-->
-        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
-        <!--        <item name="android:windowTranslucentStatus">false</item>-->
-        <!--        <item name="android:windowTranslucentNavigation">true</item>-->
-
+                <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
+                
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@android:color/darker_gray</item>
         <item name="colorAccent">@color/white</item>
@@ -42,6 +39,7 @@
         <item name="primaryShadeColor">@color/whiteInverseTrans10</item>
         <item name="primaryShadeDarkColor">@color/whiteInverseTrans25</item>
         <item name="dialogShadeColor">@color/whiteInverseTrans50</item>
+        <item name="android:fontFamily">?attr/appFont</item>
 
     </style>
 
@@ -68,6 +66,10 @@
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">2</item>
         <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="TextDefaultBold" parent="TextDefault">
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextLarge" parent="TextDefault">

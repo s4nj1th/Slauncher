@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Chinese (fallback copy of base strings) -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app_name" translatable="false">Slauncher</string>
     <string name="github" translatable="false">Github</string>
     <string name="lock_layout_description" translatable="false">lock layout description to be used a unique id to lock screen</string>

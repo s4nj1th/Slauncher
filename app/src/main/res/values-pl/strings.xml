@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Polish -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Aplikacja</string>
     <string name="set_as_default_launcher">Ustaw jako domyślny program uruchamiający</string>
     <string name="set_as_default_launcher_u"><u>Ustaw jako domyślny program uruchamiający</u></string>
@@ -135,4 +134,4 @@
     <string name="new_year_wish_1">Nie ma znaczenia, jak minął styczeń. Wciąż masz resztę roku, aby poradzić sobie lepiej niż kiedykolwiek.</string>
     <string name="cheers">Na zdrowie!</string>
     <string name="notification_bar">Pasek powiadomień</string>
-</resources><!-- Polish -->
+</resources>

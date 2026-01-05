@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Russian -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Приложение</string>
     <string name="set_as_default_launcher">Сделать лаунчером по умолчанию</string>
     <string name="set_as_default_launcher_u"><u>Сделать лаунчером по умолчанию</u></string>
@@ -137,4 +136,4 @@
     <string name="new_year_wish_1">Неважно, как прошел январь. У тебя еще есть остаток года, чтобы добиться большего, чем когда-либо.</string>
     <string name="cheers">Ваше здоровье!</string>
     <string name="notification_bar">Панель уведомлений</string>
-</resources><!-- Russian -->
+</resources>

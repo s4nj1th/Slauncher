@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Hungarian -->
-<resources>
+<?xml version="1.0" encoding="utf-8"?><resources>
     <string name="app">Alkalmazás</string>
     <string name="set_as_default_launcher">Beállítás alapért. indítóként</string>
     <string name="set_as_default_launcher_u"><u>Beállítás alapért. indítóként</u></string>
@@ -57,9 +56,7 @@
         \n\nHa tetszik az Slauncher, kérjük, adjon nekünk 5 csillagos értékelést! Ez segít javítani a helyezésünket, és nagyon boldoggá tesz minket. Köszönjük!</string>
     <string name="share_message">A segítségére van szükségünk! Tavaly átléptük az egymillió letöltést. Idén egy millióval többet szeretnénk elérni, de egyedül nem tudjuk megtenni.
         \n\nAz Slauncher-nek emberekre van szüksége, az embereknek pedig az Slauncher-re. Köszönettel vennénk, ha megosztaná másokkal is az Slaunchert!</string>
-    <!--    <string name="share_message">Az Ön havi emlékeztetője - használja Ön a telefonját, és ne a telefonja Önt! Csak így tovább! Nagyszerűen csinálja!-->
-    <!--        \n\nHa van egy kis ideje, kérjük, ossza meg másokkal is az Slauncher-t. Az Slauncher-nek szüksége van emberekre. De ami még fontosabb, az embereknek szüksége van az Slauncher-re..</string>-->
-    <string name="keyboard_message">Üdvözöljük! A billentyűzet a leggyorsabb módja az alkalmazások megtalálásához és elindításához az Slauncherben. Megkérhetjük, hogy hagyja bekapcsolva még néhány napig, és utána döntsön?
+            <string name="keyboard_message">Üdvözöljük! A billentyűzet a leggyorsabb módja az alkalmazások megtalálásához és elindításához az Slauncherben. Megkérhetjük, hogy hagyja bekapcsolva még néhány napig, és utána döntsön?
         \n\nA választás mindig az Öné.</string>
     <string name="digital_wellbeing_message">Ha időkorlátokat szeretne beállítani bizonyos alkalmazásokhoz, az Android Digital Wellbeing funkciója segíthet ebben.
         \n\nKeresse meg a Digitális jólét elemet a telefon beállításai között, és engedélyezze.</string>
@@ -139,4 +136,4 @@
     <string name="new_year_wish_1">Nem számít, hogyan telt a január. Még mindig van hátra az évből, hogy minden eddiginél jobban teljesíts.</string>
     <string name="cheers">Egészségére!</string>
     <string name="notification_bar">Értesítési sáv</string>
-</resources><!-- Hungarian -->
+</resources>

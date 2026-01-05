@@ -12,7 +12,7 @@
     <string name="black">שחור</string>
     <string name="white">לבן</string>
     <string name="change_default_launcher">שינוי משגר ברירת המחדל</string>
-        <string name="share">שיתוף</string>
+    <string name="share">שיתוף</string>
     <string name="share_now">שתף עכשיו</string>
     <string name="rate">דירוג</string>
     <string name="rate_now">דרג עכשיו</string>
@@ -21,7 +21,6 @@
     <string name="donate">תרומה</string>
     <string name="swipe_up_for_apps">1. החלקה כלפי מעלה תפתח את הרשימה של כל היישומים\n2. לפתיחת הגדרות מסך הבית יש ללחוץ לחיצה ארוכה מכל מקום על גבי המסך.</string>
     <string name="apps_on_home_screen">יישומים במסך הבית</string>
-    <string name="daily_wallpaper_update">רקע חדש בכל יום</string>
     <string name="left">ימין</string>
     <string name="right">שמאל</string>
     <string name="center">מרכז</string>
@@ -59,7 +58,7 @@
         \n\nהיית רוצה אולי לספר לחברים שלך על Slauncher? זה יכול לסייע לנו מאוד. תודה רבה!</string>
     <string name="keyboard_message">היי, יותר מהיר למצוא ולפתוח יישומים ב־Slauncher בעזרת ההקלדה. אולי בכל זאת היית רוצה להשאיר את ההגדרה הזאת ולתת לה עוד הזדמנות?
         \n\nThe choice is always yours.</string>
-        <string name="accessibility_service_description">הרשאת הנגישות נחוצה להפעלת הנעילה בהקשה כפולה. כל הנתונים שייאספו על ידי Slauncher דרך השירות הזה לא יועברו הלאה ממכשירך.</string>
+    <string name="accessibility_service_description">הרשאת הנגישות נחוצה להפעלת הנעילה בהקשה כפולה. כל הנתונים שייאספו על ידי Slauncher דרך השירות הזה לא יועברו הלאה ממכשירך.</string>
     <string name="support_slauncher_for_free">אפשר לתמוך ב־Slauncher מבלי לשלם שקל, בעזרת שימוש בקישור ה־Amazon affiliate שלנו.</string>
     <string name="support_slauncher_message">על כל רכישה שתבוצע דרך הקישור שלנו אנחנו נקבל עמלה קטנה. נשמח אם תשמרו את הקישור ותשתמשו בו בקניות מהאינטרנט.\nתודה רבה!</string>
     <string name="open">פתיחת קישור</string>
@@ -120,7 +119,7 @@
     <string name="new_year_wish">לעבר שנה טובה יותר מכל מה שקדם. שנה טובה!</string>
     <string name="new_year_wish_1">לא משנה איך עבר ינואר. עדיין יש לך את שאר השנה להצליח יותר מתמיד</string>
     <string name="cheers">לחיים!</string>
-        <string name="screen_time">זמן מסך</string>
+    <string name="screen_time">זמן מסך</string>
     <string name="learn_more">למדו עוד</string>
     <string name="did_you_know">האם ידעת?</string>
     <string name="leave_a_review">השאירו ביקורת</string>

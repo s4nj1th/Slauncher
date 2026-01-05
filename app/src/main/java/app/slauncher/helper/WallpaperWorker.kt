@@ -13,7 +13,7 @@ class WallpaperWorker(appContext: Context, workerParams: WorkerParameters) : Cor
     private val prefs = Prefs(applicationContext)
 
     override suspend fun doWork(): Result = coroutineScope {
-        // Daily wallpaper feature disabled — do nothing.
+        
         Result.success()
     }
 

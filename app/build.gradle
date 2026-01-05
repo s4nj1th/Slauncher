@@ -51,14 +51,14 @@ dependencies {
     implementation libs.appcompat
     implementation libs.recyclerview
 
-    // Android lifecycle
+    
     implementation libs.lifecycle.extensions
     implementation libs.lifecycle.viewmodel.ktx
 
-    // Navigation
+    
     implementation libs.navigation.fragment.ktx
 
-    // Work Manager
+    
     implementation libs.work.runtime.ktx
 
     //Material dependency

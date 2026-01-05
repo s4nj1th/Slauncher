@@ -58,7 +58,7 @@
     <string name="black">أسود</string>
     <string name="white">أبيض</string>
     <string name="change_default_launcher">تغيير المشغل الافتراضي</string>
-        <string name="share">شارك</string>
+    <string name="share">شارك</string>
     <string name="share_now">يشارك اﻵن</string>
     <string name="rate">قيّم</string>
     <string name="rate_now">قيّم اﻵن</string>
@@ -67,7 +67,6 @@
     <string name="donate">تبرّع</string>
     <string name="swipe_up_for_apps">1. مرر لأعلى لجميع التطبيقات\n2. اضغط مطوّلًا في أي مكان للإعدادات</string>
     <string name="apps_on_home_screen">التطبيقات على الشاشة الرئيسية</string>
-    <string name="daily_wallpaper_update">تحديث الخلفية يوميّا</string>
     <string name="left">يسار</string>
     <string name="right">يمين</string>
     <string name="center">مركز</string>
@@ -97,7 +96,7 @@
         \n\nملاحظة: لا يتم جمع أي بيانات حول استخدام التطبيقات. يتم معالجة كل شيء على جهازك.</string>
     <string name="pro_message">يحتوي Slauncher أيضًا على إصدار احترافي يسمى Pro Launcher. يحتوي على ميزات إضافية مثل الطقس، والأدوات، والخطوط، والمجلدات، وخلفيات AMOLED، وما إلى ذلك.
         \n\nإنه أيضًا أفضل طريقة لدعم مطوري Slauncher. تحقق من ذلك!</string>
-        <string name="accessibility_service_description">إذن الوصول مطلوب لتمكين النقر المزدوج للقفل. أي بيانات حصل عليها Slauncher عبر هذه الخدمة لن تترك جهازك.</string>
+    <string name="accessibility_service_description">إذن الوصول مطلوب لتمكين النقر المزدوج للقفل. أي بيانات حصل عليها Slauncher عبر هذه الخدمة لن تترك جهازك.</string>
     <string name="support_slauncher_for_free">ادعم Slauncher مجانًا باستخدام رابط الشراكة التابع لشركة Amazon.</string>
     <string name="support_slauncher_message">في كل مرة تشتري شيئًا باستخدام الرابط الخاص بنا ، نحصل على عمولة صغيرة. يرجى حفظ الرابط واستخدامه في أي وقت تتسوق فيه عبر الإنترنت. شكرًا لك!</string>
     <string name="open">افتح الرابط</string>
@@ -120,7 +119,7 @@
     <string name="swipe_left_app_enabled">التمرير لليسار مفعّل</string>
     <string name="swipe_right_app_enabled">التمرير لليمين مفعّل</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">هل تستخدم هاتفك أم أن هاتفك يستخدمك؟</string>
-        <string name="learn_more">تعلم أكثر</string>
+    <string name="learn_more">تعلم أكثر</string>
     <string name="did_you_know">هل كنت تعلم؟</string>
     <string name="leave_a_review">أخبرنا رأيك</string>
     <string name="review_message">Slauncher هو وسيظل دائمًا مجانيًا تمامًا. ليس لديها إعلانات. لا يجمع أي بيانات. والأهم من ذلك أنه يساعدك على تقليل وقت الشاشة والعيش حياة رقمية أكثر صحة.

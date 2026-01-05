@@ -87,7 +87,7 @@ class AppDrawerFragment : Fragment() {
                     else
                         requireContext().showToast(getString(R.string.search_not_available))
                 }
-                else if (adapter.itemCount == 0) // && requireContext().searchOnPlayStore(query?.trim()).not())
+                else if (adapter.itemCount == 0) 
                     requireContext().openSearch(query?.trim())
                 else
                     adapter.launchFirstInList()
@@ -145,7 +145,7 @@ class AppDrawerFragment : Fragment() {
                 val newSet = mutableSetOf<String>()
                 newSet.addAll(prefs.hiddenApps)
                 if (flag == Constants.FLAG_HIDDEN_APPS) {
-                    newSet.remove(appModel.appPackage) // for backward compatibility
+                    newSet.remove(appModel.appPackage) 
                     newSet.remove(appModel.appPackage + "|" + appModel.user.toString())
                 } else
                     newSet.add(appModel.appPackage + "|" + appModel.user.toString())

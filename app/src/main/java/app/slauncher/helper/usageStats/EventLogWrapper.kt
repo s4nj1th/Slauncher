@@ -28,7 +28,7 @@ class EventLogWrapper(private val context: Context) {
      * @return A list of foreground stats for the specified period
      */
     fun getForegroundStatsByTimestamps(start: Long, end: Long): List<ComponentForegroundStat> {
-        var queryStart = start // Can be mutated by DEVICE_STARTUP event
+        var queryStart = start 
 
         /*
          * Because sometimes, open events do not have close events when they should, as a hack / workaround,
@@ -53,7 +53,7 @@ class EventLogWrapper(private val context: Context) {
             }
         }
 
-        // Assumption: events are ordered chronologically
+        
         val events = usageStatsManager.queryEvents(queryStart, end)
 
         /* …except that sometimes, the events that are close to each other are swapped in a way that
@@ -63,11 +63,11 @@ class EventLogWrapper(private val context: Context) {
          * to prevent apps that had been opened previously in a period from being counted as "opened
          * before start" (as they are not a True unmatched close event).
          */
-        // Map components to the last moveToForeground event. Null value means it was closed.
+        
         val moveToForegroundMap = mutableMapOf<AppClass, Long?>()
         val componentForegroundStats = mutableListOf<ComponentForegroundStat>()
 
-        // Iterate over events
+        
         val event = UsageEvents.Event()
 
         while (events.hasNextEvent()) {
@@ -89,7 +89,7 @@ class EventLogWrapper(private val context: Context) {
                      * This is effectively treated as a MOVE_TO_FOREGROUND."
                      */
                 4 -> {
-                    // Store open timestamp in map, overwriting earlier timestamps in case of Duplicate open event
+                    
                     moveToForegroundMap[appClass] = event.timeStamp
                 }
 
@@ -111,22 +111,22 @@ class EventLogWrapper(private val context: Context) {
                      */
                 3 -> {
                     val eventBeginTime: Long? = moveToForegroundMap[appClass]?.also {
-                        // Open and close events in order. Mark as closed.
+                        
                         moveToForegroundMap[appClass] = null
                     } ?: if (
-                    // App has not been in this query yet (test for Duplicate close event)
+                    
                         moveToForegroundMap.keys.none { it.packageName == event.packageName } &&
-                        // Test if this unmatched close event is True by asking the Guardian to scan for it
+                        
                         guardian.test(event, queryStart)
                     ) {
-                        // Identified as True unmatched close event. Take start as a starting timestamp.
+                        
                         queryStart
                     } else {
-                        null // Ignore Faulty unmatched close event
+                        null 
                     }
 
                     if (eventBeginTime != null) {
-                        // Check if another of the app's components have moved to the foreground in the meantime
+                        
                         val endTime = moveToForegroundMap.entries
                             .filter { (key, value) -> key.packageName == event.packageName && value != null }
                             .mapNotNull { it.value }
@@ -142,13 +142,13 @@ class EventLogWrapper(private val context: Context) {
                  * "An event type denoting that the Android runtime underwent a shutdown process..."
                  */
                 UsageEvents.Event.DEVICE_SHUTDOWN -> {
-                    // Per docs: iterate over remaining start events and treat them as closed
+                    
                     moveToForegroundMap.forEach { (key, value) ->
-                        if (value != null) { // If it's a remaining start event
+                        if (value != null) { 
                             componentForegroundStats.add(
                                 ComponentForegroundStat(value, event.timeStamp, key.packageName)
                             )
-                            // Set entire app to closed
+                            
                             moveToForegroundMap.keys
                                 .filter { it.packageName == key.packageName }
                                 .forEach { samePackageKey -> moveToForegroundMap[samePackageKey] = null }
@@ -160,7 +160,7 @@ class EventLogWrapper(private val context: Context) {
                  * "An event type denoting that the Android runtime started up..."
                  */
                 UsageEvents.Event.DEVICE_STARTUP -> {
-                    // Per docs: remove pending open events
+                    
                     moveToForegroundMap.clear()
 
                     /* No package could be open longer than a reboot. Thus, we set the `start`
@@ -173,10 +173,10 @@ class EventLogWrapper(private val context: Context) {
             }
         }
 
-        // Iterate over remaining start events
+        
         moveToForegroundMap.forEach { (key, value) ->
-            if (value != null) { // If it's a remaining start event
-                // Test if it's a foreground app (True unmatched open event)
+            if (value != null) { 
+                
                 if (foregroundProcesses.any { it.contains(key.packageName) }) {
                     componentForegroundStats.add(
                         ComponentForegroundStat(
@@ -186,7 +186,7 @@ class EventLogWrapper(private val context: Context) {
                         )
                     )
                 }
-                // If app is not in foreground, drop event (Assume Faulty unmatched open event)
+                
             }
         }
 
@@ -224,14 +224,14 @@ class EventLogWrapper(private val context: Context) {
     fun getForegroundStatsByRelativeDay(offset: Int): List<ComponentForegroundStat> {
         val cal = Calendar.getInstance()
         cal.add(Calendar.DAY_OF_YEAR, -offset)
-        // Set to start of the day
+        
         cal.set(Calendar.HOUR_OF_DAY, 0)
         cal.set(Calendar.MINUTE, 0)
         cal.set(Calendar.SECOND, 0)
         cal.set(Calendar.MILLISECOND, 0)
         val beginTime = cal.timeInMillis
 
-        // Set to start of the next day
+        
         cal.add(Calendar.DAY_OF_YEAR, 1)
         val endTime = cal.timeInMillis
 
@@ -248,7 +248,7 @@ class EventLogWrapper(private val context: Context) {
     fun getForegroundStatsByPartialDay(start: Long): List<ComponentForegroundStat> {
         val cal = Calendar.getInstance()
         cal.timeInMillis = start
-        // Set to start of the next day
+        
         cal.add(Calendar.DAY_OF_YEAR, 1)
         cal.set(Calendar.HOUR_OF_DAY, 0)
         cal.set(Calendar.MINUTE, 0)
@@ -272,7 +272,7 @@ class EventLogWrapper(private val context: Context) {
     ): List<SimpleUsageStat> {
         if (foregroundStats.isEmpty()) return emptyList()
 
-        // Group by package name and sum the duration for each
+        
         val applicationTotalTime = foregroundStats
             .groupBy { it.packageName }
             .mapValues { (_, stats) -> stats.sumOf { it.endTime - it.beginTime } }
@@ -281,12 +281,12 @@ class EventLogWrapper(private val context: Context) {
         val timeZoneOffset = Calendar.getInstance().timeZone.getOffset(firstBeginTime)
         val day = TimeUnit.MILLISECONDS.toDays(firstBeginTime + timeZoneOffset)
 
-        // Optionally consume end times
+        
         endConsumer?.let { consumer ->
             foregroundStats.forEach { consumer.accept(it.packageName, it.endTime) }
         }
 
-        // Map the aggregated times to SimpleUsageStat objects
+        
         return applicationTotalTime.map { (packageName, totalTime) ->
             SimpleUsageStat(day, totalTime, packageName)
         }
@@ -303,7 +303,7 @@ class EventLogWrapper(private val context: Context) {
         val cal = Calendar.getInstance()
         val timeZoneOffset = cal.timeZone.getOffset(System.currentTimeMillis())
 
-        // To convert epoch day to milliseconds, we first get the UTC millis and then adjust for timezone
+        
         val start = TimeUnit.DAYS.toMillis(day) - timeZoneOffset
         val end = TimeUnit.DAYS.toMillis(day + 1) - timeZoneOffset
         return getForegroundStatsByTimestamps(start, end)
@@ -325,7 +325,7 @@ class EventLogWrapper(private val context: Context) {
         val timeZoneOffset = Calendar.getInstance().timeZone.getOffset(System.currentTimeMillis())
         val today = TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() + timeZoneOffset)
 
-        // Maximum event log size
+        
         currentDay = max(today - 10, currentDay)
 
         while (currentDay <= today) {

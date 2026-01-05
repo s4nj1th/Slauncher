@@ -13,7 +13,7 @@
     <string name="black">Crno</string>
     <string name="white">Bijelo</string>
     <string name="change_default_launcher">Promijeni zadani pokretač</string>
-        <string name="share">Podijeli</string>
+    <string name="share">Podijeli</string>
     <string name="share_now">Podijeli</string>
     <string name="rate">Ocijeni</string>
     <string name="rate_now">Ocijeni</string>
@@ -22,7 +22,6 @@
     <string name="donate">Doniraj</string>
     <string name="swipe_up_for_apps">1. Povuci prema gore za aplikacije\n2. Dugo pritisnite bilo gdje za postavke</string>
     <string name="apps_on_home_screen">Aplikacije na početnoj stranici</string>
-    <string name="daily_wallpaper_update">Dnevne pozadine</string>
     <string name="left">Lijevo</string>
     <string name="right">Desno</string>
     <string name="center">Sredina</string>
@@ -66,7 +65,7 @@
         \n\nNapomena: Ne prikupljaju se podaci o korištenju aplikacije. Sve se obrađuje na vašem uređaju.</string>
     <string name="pro_message">Slauncher također ima pro verziju pod nazivom Pro Launcher. Ima dodatne značajke poput vremena, widgeta, fontova, mapa, AMOLED pozadina itd.
         \n\nTo je također najbolji način da podržite programere Slauncher-a. Pogledajte!</string>
-        <string name="accessibility_service_description">Dozvola za pristupačnost potrebna je za omogućavanje zaključavanja dvostrukim dodirom. Bilo koji podatci prikupljeni ovim servisom neće napustiti tvoj uređaj.</string>
+    <string name="accessibility_service_description">Dozvola za pristupačnost potrebna je za omogućavanje zaključavanja dvostrukim dodirom. Bilo koji podatci prikupljeni ovim servisom neće napustiti tvoj uređaj.</string>
     <string name="support_slauncher_for_free">Besplatno podrži Slauncher korištenjem naše sponzorske poveznice za Amazon.</string>
     <string name="support_slauncher_message">Svaki puta kada kupiš nešto pomoću naše poveznice, mi primimo malu naknadu. Molimo spremi poveznicu i koristi ju svaki puta kada kupuješ online.\nHvala ti!</string>
     <string name="open">Otvori poveznicu</string>
@@ -129,7 +128,7 @@
     <string name="adapter_show">Prikaži</string>
     <string name="adapter_hide">Sakrij</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Koristite li svoj telefon ili vaš telefon koristi vas?</string>
-        <string name="alignment_changed">Poravnanje promijenjeno ✅</string>
+    <string name="alignment_changed">Poravnanje promijenjeno ✅</string>
     <string name="home_screen">Početni ekran</string>
     <string name="hey">Bok</string>
     <string name="new_year_wish">Neka je ova godina bolja od svih prije. Sretna nova godina!</string>

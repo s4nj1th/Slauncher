@@ -58,7 +58,7 @@
     <string name="black">Schwarz</string>
     <string name="white">Weiß</string>
     <string name="change_default_launcher">Standard-Launcher ändern</string>
-        <string name="share">Teilen</string>
+    <string name="share">Teilen</string>
     <string name="share_now">Teilen</string>
     <string name="rate">Bewerten</string>
     <string name="rate_now">Bewerten</string>
@@ -68,7 +68,6 @@
     <string name="donate">Spenden</string>
     <string name="swipe_up_for_apps">1. Für alle Apps nach oben wischen\n2. Drücken Sie lange auf eine beliebige Stelle, um Einstellungen vorzunehmen</string>
     <string name="apps_on_home_screen">Apps auf dem Startbildschirm</string>
-    <string name="daily_wallpaper_update">Täglich neue Hintergrundbilder</string>
     <string name="left">Links</string>
     <string name="right">Rechts</string>
     <string name="center">Mitte</string>
@@ -100,7 +99,7 @@
         \n\nHinweis: Es werden keine Daten zur App-Nutzung gesammelt. Alles wird auf Ihrem Gerät verarbeitet.</string>
     <string name="pro_message">Slauncher hat auch eine Pro-Version namens Pro Launcher. Sie bietet zusätzliche Funktionen wie Wetter, Widgets, Schriftarten, Ordner, AMOLED-Hintergründe usw.
         \n\nEs ist auch der beste Weg, die Entwickler von Slauncher zu unterstützen. Schau es dir an!</string>
-        <string name="accessibility_service_description">Die Zugriffsberechtigung ist erforderlich, um das Sperren durch Doppeltippen zu ermöglichen. Die von Slauncher über diesen Dienst erfassten Daten verlassen Ihr Gerät nicht.</string>
+    <string name="accessibility_service_description">Die Zugriffsberechtigung ist erforderlich, um das Sperren durch Doppeltippen zu ermöglichen. Die von Slauncher über diesen Dienst erfassten Daten verlassen Ihr Gerät nicht.</string>
     <string name="support_slauncher_for_free">Unterstützen Sie Slauncher kostenlos, indem Sie unseren Amazon-Partnerlink verwenden.</string>
     <string name="support_slauncher_message">Jedes Mal, wenn Sie über unseren Link etwas kaufen, erhalten wir eine kleine Provision. Bitte speichern Sie den Link und verwenden Sie ihn bei jedem Online-Einkauf. Dan­ke­schön!</string>
     <string name="open">Verbindung öffnen</string>
@@ -126,7 +125,7 @@
     <string name="swipe_right_app_disabled">App nach rechts wischen deaktiviert</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Benutzen Sie Ihr Telefon, oder nutzt Ihr Telefon Sie?</string>
     <string name="screen_time">Bildschirmzeit</string>
-        <string name="learn_more">Erfahren Sie mehr</string>
+    <string name="learn_more">Erfahren Sie mehr</string>
     <string name="did_you_know">Wussten Sie?</string>
     <string name="leave_a_review">Rezension</string>
     <string name="review_message">Slauncher ist und bleibt völlig kostenlos. Es gibt keine Werbung. Es werden keine Daten erfasst. Am wichtigsten ist, dass es Ihnen dabei hilft, Ihre Bildschirmzeit zu verkürzen und ein gesünderes digitales Leben zu führen.

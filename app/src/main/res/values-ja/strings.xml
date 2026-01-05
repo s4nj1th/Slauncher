@@ -59,7 +59,7 @@
     <string name="black">黒</string>
     <string name="white">白</string>
     <string name="change_default_launcher">デフォルトのランチャーを変更する</string>
-        <string name="share">共有</string>
+    <string name="share">共有</string>
     <string name="share_now">共有</string>
     <string name="rate">レート</string>
     <string name="rate_now">レート</string>
@@ -69,7 +69,6 @@
     <string name="donate">寄付</string>
     <string name="swipe_up_for_apps">1. 上にスワイプしてすべてのアプリを表示します\n2. 設定を行うには任意の場所を長押しします</string>
     <string name="apps_on_home_screen">ホーム画面のアプリ</string>
-    <string name="daily_wallpaper_update">毎日新しい壁紙</string>
     <string name="left">左</string>
     <string name="right">右</string>
     <string name="center">中心</string>
@@ -99,7 +98,7 @@
         \n\n注意: アプリの使用データは収集されません。すべての処理はあなたのデバイスで行われます。</string>
     <string name="pro_message">SlauncherにはPro Launcherというプロ版もあります。天気、ウィジェット、フォント、フォルダー、AMOLED壁紙などの追加機能があります。
         \n\nSlauncherの開発者をサポートするための最良の方法でもあります。チェックしてみてください！</string>
-        <string name="accessibility_service_description">ダブルタップしてロックを有効にするには、アクセシビリティ許可が必要です。このサービスを通じて Slauncher が取得したデータは、デバイスから流出することはありません。</string>
+    <string name="accessibility_service_description">ダブルタップしてロックを有効にするには、アクセシビリティ許可が必要です。このサービスを通じて Slauncher が取得したデータは、デバイスから流出することはありません。</string>
     <string name="support_slauncher_for_free">Amazon アフィリエイト リンクを使用して、Slauncher を無料でサポートしてください。</string>
     <string name="support_slauncher_message">あなたが私たちのリンクを使用して何かを購入するたびに、私たちは少額の手数料を受け取ります。リンクを保存し、オンライン ショッピングの際には必ずご利用ください。 ありがとう！</string>
     <string name="open">リンクを開く</string>
@@ -125,7 +124,7 @@
     <string name="screen_time">スクリーンタイム</string>
     <string name="swipe_right_app_disabled">アプリを右にスワイプすると無効になります</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">あなたは電話を使っていますか、それともあなたの電話があなたを使っていますか？</string>
-        <string name="learn_more">もっと詳しく知る</string>
+    <string name="learn_more">もっと詳しく知る</string>
     <string name="did_you_know">知っていましたか？</string>
     <string name="leave_a_review">レビューを残す</string>
     <string name="review_message">Slauncher は現在も、今後も完全に無料です。広告はありません。データは収集されません。最も重要なことは、スクリーンタイムを短縮し、より健康的なデジタル ライフを送るのに役立つことです。

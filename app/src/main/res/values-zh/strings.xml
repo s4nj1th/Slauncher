@@ -32,7 +32,7 @@
     <string name="black">Black</string>
     <string name="white">White</string>
     <string name="change_default_launcher">Change default launcher</string>
-        <string name="share">Share</string>
+    <string name="share">Share</string>
     <string name="share_now">Share now</string>
     <string name="rate">Rate</string>
     <string name="rate_now">Rate now</string>
@@ -41,7 +41,6 @@
     <string name="donate">Donate</string>
     <string name="swipe_up_for_apps">1. Swipe up for all apps\n2. Long press anywhere for settings</string>
     <string name="apps_on_home_screen">Apps on home screen</string>
-    <string name="daily_wallpaper_update">Daily new wallpaper</string>
     <string name="left">Left</string>
     <string name="right">Right</string>
     <string name="center">Center</string>
@@ -84,7 +83,7 @@
         \n\nNote: No app usage data is collected. Everything is processed on your device.</string>
     <string name="pro_message">Slauncher also has a pro version called Pro Launcher. It has extra features like weather, widgets, fonts, folders, AMOLED wallpapers, and so on.
         \n\nIt\'s also the best way to support the developers of Slauncher. Check it out!</string>
-        <string name="accessibility_service_description">The accessibility permission is required to enable double tap to lock. Any data acquired by Slauncher via this service will not leave your device.</string>
+    <string name="accessibility_service_description">The accessibility permission is required to enable double tap to lock. Any data acquired by Slauncher via this service will not leave your device.</string>
     <string name="support_slauncher_for_free">Support Slauncher for free by using our Amazon affiliate link.</string>
     <string name="support_slauncher_message">Every time you buy something using our link, we get a small commission. Please save the link and use it whenever you shop online.
 Thank you!</string>
@@ -142,7 +141,7 @@ Thank you!</string>
     <string name="adapter_show">Show</string>
     <string name="adapter_hide">Hide</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Are you using your phone, or is your phone using you?</string>
-        <string name="screen_time">Screen time</string>
+    <string name="screen_time">Screen time</string>
     <string name="learn_more">Learn more</string>
     <string name="did_you_know">Did you know?</string>
     <string name="leave_a_review">Leave a review</string>

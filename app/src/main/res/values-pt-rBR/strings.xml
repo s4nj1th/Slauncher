@@ -13,7 +13,7 @@
     <string name="black">Preto</string>
     <string name="white">Branco</string>
     <string name="change_default_launcher">Alterar launcher padrão</string>
-        <string name="share">Compartilhar</string>
+    <string name="share">Compartilhar</string>
     <string name="share_now">Compartilhar</string>
     <string name="rate">Taxa</string>
     <string name="rate_now">Taxa</string>
@@ -23,7 +23,6 @@
     <string name="donate">Fazer donativo</string>
     <string name="swipe_up_for_apps">1. Deslize para cima para ver todos os aplicativos\n2. Pressione continuamente em qualquer ponto do ecrã para aceder às configurações</string>
     <string name="apps_on_home_screen">Aplicativos na home</string>
-    <string name="daily_wallpaper_update">Novo fundo de ecrã diariamente</string>
     <string name="left">Esquerda</string>
     <string name="right">Direita</string>
     <string name="center">Centro</string>
@@ -66,7 +65,7 @@
         \n\nNota: Não são coletados dados de uso do aplicativo. Tudo é processado no seu dispositivo.</string>
     <string name="pro_message">Slauncher também tem uma versão pro chamada Pro Launcher. Tem recursos extras como clima, widgets, fontes, pastas, papéis de parede AMOLED, e assim por diante.
         \n\nÉ também a melhor maneira de apoiar os desenvolvedores do Slauncher. Confira!</string>
-        <string name="accessibility_service_description">A permissão de acessibilidade é necessária para ativar o toque duplo para bloquear. Quaisquer dados adquiridos pelo Slauncher através deste serviço não sairão do seu dispositivo.</string>
+    <string name="accessibility_service_description">A permissão de acessibilidade é necessária para ativar o toque duplo para bloquear. Quaisquer dados adquiridos pelo Slauncher através deste serviço não sairão do seu dispositivo.</string>
     <string name="support_slauncher_for_free">Apoie o Slauncher gratuitamente usando nosso link de afiliado da Amazon.</string>
     <string name="support_slauncher_message">Sempre que você comprar algo usando nosso link, receberemos uma pequena comissão. Salve o link e use-o sempre que fizer compras online. Obrigado!</string>
     <string name="open">Abrir link</string>
@@ -124,7 +123,7 @@
     <string name="adapter_show">Mostrar</string>
     <string name="adapter_hide">Esconder</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Você está usando seu telefone, ou seu telefone está usando você?</string>
-        <string name="learn_more">Saber mais</string>
+    <string name="learn_more">Saber mais</string>
     <string name="screen_time">Tempo de tela</string>
     <string name="did_you_know">Você sabia?</string>
     <string name="leave_a_review">Deixe um comentário</string>

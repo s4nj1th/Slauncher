@@ -175,7 +175,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val activityInfo = launcher.getActivityList(packageName, userHandle)
 
         val component = if (activityClassName.isNullOrBlank()) {
-            // activityClassName will be null for hidden apps.
+            
             when (activityInfo.size) {
                 0 -> {
                     appContext.showToast(appContext.getString(R.string.app_not_found))
@@ -219,11 +219,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun setWallpaperWorker() {
-        // Daily wallpaper feature disabled — no worker scheduled.
+        
     }
 
     fun cancelWallpaperWorker() {
-        // Daily wallpaper feature disabled — nothing to cancel.
+        
     }
 
     fun updateHomeAlignment(gravity: Int) {
@@ -235,7 +235,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         if (prefs.screenTimeLastUpdated.hasBeenMinutes(1).not()) return
 
         val eventLogWrapper = EventLogWrapper(appContext)
-        // Start of today in millis
+        
         val calendar = Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, 0)
             set(Calendar.MINUTE, 0)

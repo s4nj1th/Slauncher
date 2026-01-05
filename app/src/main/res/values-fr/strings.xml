@@ -13,7 +13,7 @@
     <string name="black">Noir</string>
     <string name="white">Blanc</string>
     <string name="change_default_launcher">Changer le lanceur par défaut</string>
-        <string name="share">Partager</string>
+    <string name="share">Partager</string>
     <string name="share_now">Partager</string>
     <string name="rate">Évaluer</string>
     <string name="rate_now">Évaluer</string>
@@ -23,7 +23,6 @@
     <string name="donate">Donner</string>
     <string name="swipe_up_for_apps">1. Balayez vers le haut pour toutes les applications.\n2. Appuyez longuement n\'importe où pour les paramètres.</string>
     <string name="apps_on_home_screen">Applications sur l\'écran d\'accueil</string>
-    <string name="daily_wallpaper_update">Nouveau fond d\'écran quotidien</string>
     <string name="left">Gauche</string>
     <string name="right">Droite</string>
     <string name="center">Centre</string>
@@ -66,7 +65,7 @@
         \n\nRemarque : Aucune donnée d\'utilisation de l\'application n\'est collectée. Tout est traité sur votre appareil.</string>
     <string name="pro_message">Slauncher a également une version pro appelée Pro Launcher. Elle dispose de fonctionnalités supplémentaires telles que la météo, les widgets, les polices, les dossiers, les fonds d\'écran AMOLED, etc.
         \n\nC\'est aussi le meilleur moyen de soutenir les développeurs d\'Slauncher. Jetez-y un œil !</string>
-        <string name="accessibility_service_description">L\'autorisation d\'accessibilité est requise pour activer le double appui pour verrouiller. Toutes les données acquises par Slauncher via ce service ne quitteront pas votre appareil.</string>
+    <string name="accessibility_service_description">L\'autorisation d\'accessibilité est requise pour activer le double appui pour verrouiller. Toutes les données acquises par Slauncher via ce service ne quitteront pas votre appareil.</string>
     <string name="support_slauncher_for_free">Soutenez Slauncher gratuitement en utilisant notre lien d\'affiliation Amazon.</string>
     <string name="support_slauncher_message">Chaque fois que vous achetez quelque chose en utilisant notre lien, nous recevons une petite commission. Enregistrez le lien et utilisez le chaque fois que vous commandez en ligne. Merci!</string>
     <string name="open">Ouvrir le lien</string>
@@ -126,7 +125,7 @@
     <string name="adapter_show">Afficher</string>
     <string name="adapter_hide">Masquer</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Utilisez-vous votre téléphone, ou votre téléphone vous utilise-t-il?</string>
-        <string name="learn_more">Apprendre encore plus</string>
+    <string name="learn_more">Apprendre encore plus</string>
     <string name="screen_time">Temps d\'écran</string>
     <string name="did_you_know">Saviez-vous?</string>
     <string name="leave_a_review">Laisser un commentaire</string>

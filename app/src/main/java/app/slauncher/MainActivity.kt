@@ -51,10 +51,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var timerJob: Job? = null
 
-//    override fun onBackPressed() {
-//        if (navController.currentDestination?.id != R.id.mainFragment)
-//            super.onBackPressed()
-//    }
+
+
+
+
 
     override fun attachBaseContext(context: Context) {
         val newConfig = Configuration(context.resources.configuration)
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         prefs = Prefs(this)
-        // Apply font-specific theme variant before creating activity so styles pick up appFont
+        
         when (prefs.fontSelection) {
             Constants.Font.INTER -> setTheme(R.style.AppTheme_FontInter)
             Constants.Font.UBUNTU -> setTheme(R.style.AppTheme_FontUbuntu)
@@ -84,11 +84,11 @@ class MainActivity : AppCompatActivity() {
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (navController.currentDestination?.id != R.id.mainFragment) {
-                    // then we might want to finish the activity or disable this callback.
+                    
                     if (navController.popBackStack()) {
-                        // Successfully popped back
+                        
                     } else {
-                        // if you want other system/activity level handling
+                        
                     }
                 } else {
                     binding.messageLayout.visibility = View.GONE
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         AppCompatDelegate.setDefaultNightMode(prefs.appTheme)
-        // Daily wallpaper feature disabled
+        
     }
 
     private fun initClickListeners() {
@@ -166,7 +166,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                // Wallpaper dialog removed
+                
 
                 Constants.Dialog.REVIEW -> {
                     prefs.userState = Constants.UserState.RATE
@@ -286,7 +286,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupOrientation() {
         if (isTablet(this) || Build.VERSION.SDK_INT == Build.VERSION_CODES.O)
             return
-        // In Android 8.0, windowIsTranslucent cannot be used with screenOrientation=portrait
+        
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 

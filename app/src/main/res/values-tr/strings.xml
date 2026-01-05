@@ -58,7 +58,7 @@
     <string name="black">Siyah</string>
     <string name="white">Beyaz</string>
     <string name="change_default_launcher">Varsayılan başlatıcıyı değiştir</string>
-        <string name="share">Paylaş</string>
+    <string name="share">Paylaş</string>
     <string name="share_now">Şimdi paylaş</string>
     <string name="rate">Değerlendir</string>
     <string name="rate_now">Şimdi değerlendir</string>
@@ -68,7 +68,6 @@
     <string name="donate">Bağış yap</string>
     <string name="swipe_up_for_apps">1. Tüm uygulamalar için yukarı kaydırın\n2. Ayarlar için herhangi bir yere uzun basın</string>
     <string name="apps_on_home_screen">Ana ekran uygulamaları</string>
-    <string name="daily_wallpaper_update">Günlük duvar kağıtları</string>
     <string name="left">Sol</string>
     <string name="right">Sağ</string>
     <string name="center">Merkez</string>
@@ -100,7 +99,7 @@
         \n\nNot: Uygulama kullanım verileri toplanmaz. Her şey cihazınızda işlenir.</string>
     <string name="pro_message">Slauncher\'ın Pro Launcher adında bir pro versiyonu da var. Hava durumu, widget\'lar, yazı tipleri, klasörler, AMOLED duvar kağıtları gibi ekstra özelliklere sahip.
         \n\nAyrıca Slauncher geliştiricilerini desteklemenin en iyi yoludur. Mutlaka inceleyin!</string>
-        <string name="accessibility_service_description">Kilitlemek için çift dokunmayı etkinleştirmek için erişilebilirlik izni gereklidir. Slauncher tarafından bu hizmet aracılığıyla elde edilen hiçbir veri cihazınızdan ayrılmayacaktır.</string>
+    <string name="accessibility_service_description">Kilitlemek için çift dokunmayı etkinleştirmek için erişilebilirlik izni gereklidir. Slauncher tarafından bu hizmet aracılığıyla elde edilen hiçbir veri cihazınızdan ayrılmayacaktır.</string>
     <string name="support_slauncher_for_free">Amazon ortaklık bağlantımızı kullanarak Slauncher\'ı ücretsiz olarak destekleyin.</string>
     <string name="support_slauncher_message">Bağlantımızı kullanarak her bir şey satın aldığınızda, küçük bir komisyon alırız. Lütfen bağlantıyı kaydedin ve çevrimiçi alışveriş yaptığınızda kullanın. Teşekkür ederiz!</string>
     <string name="open">Linki aç</string>
@@ -125,7 +124,7 @@
     <string name="swipe_left_app_disabled">Sola kaydırma uygulaması devre dışı</string>
     <string name="swipe_right_app_disabled">Sağa kaydırma uygulaması devre dışı</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Sen mi telefonunu, kullanıyorsun yoksa telefon mu seni kullanıyor?</string>
-        <string name="learn_more">Daha fazla bilgi</string>
+    <string name="learn_more">Daha fazla bilgi</string>
     <string name="screen_time">Ekran süresi</string>
     <string name="did_you_know">Biliyor muydunuz?</string>
     <string name="leave_a_review">Değerlendirme bırakın</string>

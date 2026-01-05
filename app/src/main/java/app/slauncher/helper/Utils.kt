@@ -93,15 +93,15 @@ suspend fun getAppsList(
                         profile
                     )
 
-                                    // if the current app is not Slauncher
+                                    
                     if (app.applicationInfo.packageName != BuildConfig.APPLICATION_ID) {
-                        // is this a hidden app?
+                        
                         if (hiddenApps.contains(app.applicationInfo.packageName + "|" + profile.toString())) {
                             if (includeHiddenApps) {
                                 appList.add(appModel)
                             }
                         } else {
-                            // this is a regular app
+                            
                             if (includeRegularApps) {
                                 appList.add(appModel)
                             }
@@ -118,8 +118,8 @@ suspend fun getAppsList(
     }
 }
 
-// This is to ensure backward compatibility with older app versions
-// which did not support multiple user profiles
+
+
 private fun upgradeHiddenApps(prefs: Prefs) {
     val hiddenAppsSet = prefs.hiddenApps
     val newHiddenAppsSet = mutableSetOf<String>()
@@ -346,7 +346,7 @@ fun openSearch(context: Context) {
 
 @SuppressLint("WrongConstant", "PrivateApi")
 fun expandNotificationDrawer(context: Context) {
-    // Source: https://stackoverflow.com/a/51132142
+    
     try {
         val statusBarService = context.getSystemService("statusbar")
         val statusBarManager = Class.forName("android.app.StatusBarManager")

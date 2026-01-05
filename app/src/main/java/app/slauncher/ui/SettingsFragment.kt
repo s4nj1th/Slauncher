@@ -101,7 +101,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             R.id.toggleLock -> toggleLockMode()
             R.id.autoShowKeyboard -> toggleKeyboardText()
             R.id.homeAppsNum -> binding.appsNumSelectLayout.visibility = View.VISIBLE
-//            daily wallpaper UI removed
+
             R.id.alignment -> binding.alignmentSelectLayout.visibility = View.VISIBLE
             R.id.alignmentLeft -> viewModel.updateHomeAlignment(Gravity.START)
             R.id.alignmentCenter -> viewModel.updateHomeAlignment(Gravity.CENTER)
@@ -162,7 +162,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
                 requireContext().showToast(getString(R.string.alignment_changed))
             }
 
-//            daily wallpaper UI removed
+
             R.id.appThemeText -> {
                 binding.appThemeSelectLayout.visibility = View.VISIBLE
                 binding.themeSystem.visibility = View.VISIBLE
@@ -232,7 +232,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.textSize9.setOnClickListener(this)
         binding.textSize10.setOnClickListener(this)
 
-        // daily wallpaper UI removed
+        
         binding.alignment.setOnLongClickListener(this)
         binding.appThemeText.setOnLongClickListener(this)
         binding.swipeLeftApp.setOnLongClickListener(this)
@@ -362,7 +362,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
 
     private fun openAccessibilityService() {
         toggleAccessibilityVisibility(false)
-        // prefs.lockModeOn = true
+        
         populateLockSettings()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
@@ -395,7 +395,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
 
     private fun removeActiveAdmin(toastMessage: String? = null) {
         try {
-            deviceManager.removeActiveAdmin(componentName) // for backward compatibility
+            deviceManager.removeActiveAdmin(componentName) 
             requireContext().showToast(toastMessage)
         } catch (e: Exception) {
             e.printStackTrace()
@@ -507,7 +507,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         else binding.autoShowKeyboard.text = getString(R.string.off)
     }
 
-    // Daily wallpaper functionality removed
+    
 
     private fun updateHomeBottomAlignment() {
         if (viewModel.isSlauncherDefault.value != true) {
@@ -566,11 +566,11 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             binding.swipeRightApp.setTextColor(requireContext().getColorFromAttr(R.attr.primaryColorTrans50))
     }
 
-//    private fun populateDigitalWellbeing() {
-//        binding.digitalWellbeing.isVisible = requireContext().isPackageInstalled(Constants.DIGITAL_WELLBEING_PACKAGE_NAME).not()
-//                && requireContext().isPackageInstalled(Constants.DIGITAL_WELLBEING_SAMSUNG_PACKAGE_NAME).not()
-//                && prefs.hideDigitalWellbeing.not()
-//    }
+
+
+
+
+
 
     private fun showAppListIfEnabled(flag: Int) {
         if ((flag == Constants.FLAG_SET_SWIPE_LEFT_APP) and !prefs.swipeLeftEnabled) {

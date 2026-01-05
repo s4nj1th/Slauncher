@@ -58,7 +58,7 @@
     <string name="black">Czarny</string>
     <string name="white">Biały</string>
     <string name="change_default_launcher">Zmień domyślny program uruchamiający</string>
-        <string name="share">Udostępnij</string>
+    <string name="share">Udostępnij</string>
     <string name="share_now">Udostępnij</string>
     <string name="rate">Oceń</string>
     <string name="rate_now">Oceń</string>
@@ -68,7 +68,6 @@
     <string name="donate">Wspomóż</string>
     <string name="swipe_up_for_apps">1. Przesuń palcem w górę, aby wyświetlić wszystkie aplikacje\n2. Naciśnij i przytrzymaj dowolne miejsce, aby przejść do ustawień</string>
     <string name="apps_on_home_screen">Aplikacje na ekranie głównym</string>
-    <string name="daily_wallpaper_update">Codziennie nowa tapeta</string>
     <string name="left">Lewo</string>
     <string name="right">Prawo</string>
     <string name="center">Środek</string>
@@ -98,7 +97,7 @@
         \n\nUwaga: Nie są gromadzone żadne dane o użyciu aplikacji. Wszystko jest przetwarzane na Twoim urządzeniu.</string>
     <string name="pro_message">Slauncher ma również wersję pro o nazwie Pro Launcher. Posiada dodatkowe funkcje, takie jak pogoda, widgety, czcionki, foldery, tapety AMOLED itp.
         \n\nTo także najlepszy sposób na wsparcie deweloperów Slauncher. Sprawdź to!</string>
-        <string name="accessibility_service_description">Uprawnienia dostępu są wymagane, aby włączyć podwójne dotknięcie, aby zablokować. Wszelkie dane pozyskane przez Slauncher za pośrednictwem tej usługi nie opuszczą Twojego urządzenia.</string>
+    <string name="accessibility_service_description">Uprawnienia dostępu są wymagane, aby włączyć podwójne dotknięcie, aby zablokować. Wszelkie dane pozyskane przez Slauncher za pośrednictwem tej usługi nie opuszczą Twojego urządzenia.</string>
     <string name="support_slauncher_for_free">Wesprzyj Slauncher za darmo, korzystając z naszego linku afiliacyjnego Amazon.</string>
     <string name="support_slauncher_message">Za każdym razem, gdy kupujesz coś za pomocą naszego linku, otrzymujemy niewielką prowizję. Zapisz link i używaj go podczas zakupów online. Dziękuję!</string>
     <string name="open">Otwórz łącze</string>
@@ -123,7 +122,7 @@
     <string name="swipe_left_app_disabled">Gest Przesuń w lewo wyłączony</string>
     <string name="swipe_right_app_disabled">Gest Przesuń w prawo jest wyłączony</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Czy używasz telefonu, czy telefon używa ciebie?</string>
-        <string name="screen_time">Czas ekranowy</string>
+    <string name="screen_time">Czas ekranowy</string>
     <string name="learn_more">Ucz się więcej</string>
     <string name="did_you_know">Czy wiedziałeś?</string>
     <string name="leave_a_review">Ucz się więcej</string>

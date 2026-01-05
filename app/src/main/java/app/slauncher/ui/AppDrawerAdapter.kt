@@ -85,8 +85,8 @@ class AppDrawerAdapter(
                 val appFilteredList = (if (charSearch.isNullOrBlank()) appsList
                 else appsList.filter { app ->
                     appLabelMatches(app.appLabel, charSearch)
-//                }.sortedByDescending {
-//                    charSearch.contentEquals(it.appLabel, true)
+
+
                 } as MutableList<AppModel>)
 
                 val filterResults = FilterResults()
@@ -129,7 +129,7 @@ class AppDrawerAdapter(
     }
 
     fun setAppList(appsList: MutableList<AppModel>) {
-        // Add empty app for bottom padding in recyclerview
+        
         appsList.add(AppModel("", null, "", "", false, android.os.Process.myUserHandle()))
         this.appsList = appsList
         this.appFilteredList = appsList

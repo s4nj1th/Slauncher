@@ -13,7 +13,7 @@
     <string name="black">Hitam</string>
     <string name="white">Putih</string>
     <string name="change_default_launcher">Ubah peluncur default</string>
-        <string name="share">Bagikan</string>
+    <string name="share">Bagikan</string>
     <string name="share_now">Bagikan sekarang</string>
     <string name="rate">Peringkat</string>
     <string name="rate_now">Berikan peringkat sekarang</string>
@@ -23,7 +23,6 @@
     <string name="donate">Donasi</string>
     <string name="swipe_up_for_apps">1. Geser ke atas untuk semua aplikasi\n2. Tekan lama di mana saja untuk pengaturan</string>
     <string name="apps_on_home_screen">Aplikasi di layar awal</string>
-    <string name="daily_wallpaper_update">Wallpaper baru setiap hari</string>
     <string name="left">Kiri</string>
     <string name="right">kanan</string>
     <string name="center">Tengah</string>
@@ -66,7 +65,7 @@
         \n\nCatatan: Tidak ada data penggunaan aplikasi yang dikumpulkan. Semua diproses di perangkat Anda.</string>
     <string name="pro_message">Slauncher juga memiliki versi pro yang disebut Pro Launcher. Ini memiliki fitur tambahan seperti cuaca, widget, font, folder, wallpaper AMOLED, dan banyak lagi.
         \n\nIni juga merupakan cara terbaik untuk mendukung pengembang Slauncher. Cek it out!</string>
-        <string name="accessibility_service_description">Izin aksesibilitas diperlukan untuk mengaktifkan ketuk dua kali untuk mengunci. Data apa pun yang diperoleh Slauncher melalui layanan ini tidak akan meninggalkan perangkat Anda.</string>
+    <string name="accessibility_service_description">Izin aksesibilitas diperlukan untuk mengaktifkan ketuk dua kali untuk mengunci. Data apa pun yang diperoleh Slauncher melalui layanan ini tidak akan meninggalkan perangkat Anda.</string>
     <string name="support_slauncher_for_free">Dukung Slauncher secara gratis dengan menggunakan tautan afiliasi Amazon kami.</string>
     <string name="support_slauncher_message">Setiap kali Anda membeli sesuatu menggunakan tautan kami, kami mendapat komisi kecil. Harap simpan tautan dan gunakan setiap kali Anda berbelanja online.\nTerima kasih!</string>
     <string name="open">Buka tautan</string>
@@ -122,7 +121,7 @@
     <string name="adapter_show">perlihatkan</string>
     <string name="adapter_hide">sembunyikan</string>
     <string name="are_you_using_your_phone_or_is_your_phone_using_you">Apakah Anda menggunakan ponsel Anda, atau ponsel Anda menggunakan Anda?</string>
-        <string name="learn_more">Pelajari lebih lanjut</string>
+    <string name="learn_more">Pelajari lebih lanjut</string>
     <string name="screen_time">Waktu layar</string>
     <string name="did_you_know">Tahukah kamu?</string>
     <string name="leave_a_review">Tinggalkan ulasan</string>

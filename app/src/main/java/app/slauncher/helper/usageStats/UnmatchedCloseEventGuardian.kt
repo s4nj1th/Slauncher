@@ -14,7 +14,7 @@ import android.util.Log
 class UnmatchedCloseEventGuardian(private val usageStatsManager: UsageStatsManager) {
 
     companion object {
-        private const val SCAN_INTERVAL = 1000L * 60 * 60 * 24 // 24 hours
+        private const val SCAN_INTERVAL = 1000L * 60 * 60 * 24 
     }
 
     /**
@@ -25,30 +25,30 @@ class UnmatchedCloseEventGuardian(private val usageStatsManager: UsageStatsManag
     fun test(event: UsageEvents.Event, queryStart: Long): Boolean {
         val events = usageStatsManager.queryEvents(queryStart - SCAN_INTERVAL, queryStart)
 
-        // Reusable event object for iteration
+        
         val e = UsageEvents.Event()
 
-        // Track whether the package is currently in foreground or background
-        var open = false // Not open until opened
+        
+        var open = false 
 
         while (events.hasNextEvent()) {
             events.getNextEvent(e)
 
             if (e.eventType == UsageEvents.Event.DEVICE_STARTUP) {
-                // Consider all apps closed after startup according to docs
+                
                 open = false
             }
 
-            // Only consider events concerning our package otherwise
+            
             if (event.packageName == e.packageName) {
                 when (e.eventType) {
-                    // see EventLogWrapper
+                    
                     UsageEvents.Event.ACTIVITY_RESUMED, 4 -> {
                         open = true
                     }
                     UsageEvents.Event.ACTIVITY_PAUSED, 3 -> {
                         if (e.timeStamp != event.timeStamp) {
-                            // Don't flip to 'false' if we're looking at the original event itself
+                            
                             open = false
                         }
                     }
@@ -59,7 +59,7 @@ class UnmatchedCloseEventGuardian(private val usageStatsManager: UsageStatsManag
         val result = if (open) "True" else "Faulty"
         Log.d("Guardian", "Scanned for package ${event.packageName} and determined event to be $result")
 
-        // Event is valid if it was previously opened (within SCAN_INTERVAL)
+        
         return open
     }
 }

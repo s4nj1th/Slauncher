@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/olauncherHiddenApps"
+                        android:id="@+id/slauncherHiddenApps"
                         style="@style/TextLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -68,28 +68,6 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/set_as_default_launcher" />
-
-                <TextView
-                    android:id="@+id/aboutOlauncher"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:drawablePadding="8dp"
-                    android:gravity="center"
-                    android:text="@string/about_olauncher" />
-
-                <TextView
-                    android:id="@+id/moreFeatures"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/more_features" />
 
             </LinearLayout>
 
@@ -746,6 +724,36 @@
                             android:gravity="center"
                             android:paddingVertical="8dp"
                             android:text="@string/_7" />
+                        
+                        <TextView
+                            android:id="@+id/textSize8"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_8" />
+
+                        <TextView
+                            android:id="@+id/textSize9"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_9" />
+                        
+                        <TextView
+                            android:id="@+id/textSize10"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_10" />
 
                     </LinearLayout>
 
@@ -926,60 +934,6 @@
                         android:padding="10dp"
                         android:text="@string/off" />
                 </FrameLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/twitter"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:padding="10dp"
-                    android:text="@string/twitter" />
-
-                <TextView
-                    android:id="@+id/share"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:padding="10dp"
-                    android:text="@string/share" />
-
-                <TextView
-                    android:id="@+id/rate"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:padding="10dp"
-                    android:text="@string/rate" />
-
-                <TextView
-                    android:id="@+id/github"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:padding="10dp"
-                    android:text="@string/github" />
-
-                <TextView
-                    android:id="@+id/privacy"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
-                    android:padding="10dp"
-                    android:text="@string/privacy" />
-
             </LinearLayout>
 
             <TextView

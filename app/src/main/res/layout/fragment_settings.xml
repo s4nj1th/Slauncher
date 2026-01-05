@@ -45,7 +45,7 @@
                     android:layout_marginTop="8dp">
 
                     <TextView
-                        android:id="@+id/olauncherHiddenApps"
+                        android:id="@+id/slauncherHiddenApps"
                         style="@style/TextLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -70,29 +70,6 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/set_as_default_launcher" />
-
-                <TextView
-                    android:id="@+id/aboutOlauncher"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:drawablePadding="8dp"
-                    android:gravity="center"
-                    android:text="@string/about_olauncher" />
-
-                <TextView
-                    android:id="@+id/moreFeatures"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/more_features" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -655,6 +632,94 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    android:animateLayoutChanges="true">
+
+                    <TextView
+                        style="@style/TextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:paddingVertical="8dp"
+                        android:text="@string/font" 
+                        android:textColor="?attr/primaryColor"/>
+
+                    <TextView
+                        android:id="@+id/fontText"
+                        style="@style/TextSmallBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="4dp"
+                        android:padding="8dp"
+                        android:text="@string/libre_baskerville" />
+
+                    <!-- font select layout -->
+                    <LinearLayout
+                        android:id="@+id/fontSelectLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:background="@drawable/rounded_primary_gradient"
+                        android:elevation="8dp"
+                        android:orientation="horizontal"
+                        android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+                        android:outlineSpotShadowColor="@color/colorPrimaryDark"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="2dp"
+                        android:visibility="gone">
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/fontDefault"
+                            style="@style/TextSmallBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:gravity="center"
+                            android:paddingVertical="6dp"
+                            android:text="@string/default_font" />
+
+                        <TextView
+                            android:id="@+id/fontInter"
+                            style="@style/TextSmallBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:gravity="center"
+                            android:paddingVertical="6dp"
+                            android:text="@string/inter" />
+
+                        <TextView
+                            android:id="@+id/fontUbuntu"
+                            style="@style/TextSmallBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="24dp"
+                            android:gravity="center"
+                            android:paddingVertical="6dp"
+                            android:text="@string/ubuntu" />
+
+                        <TextView
+                            android:id="@+id/fontLibre"
+                            style="@style/TextSmallBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingVertical="6dp"
+                            android:text="@string/libre_baskerville" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="4dp"
                     android:animateLayoutChanges="true"
                     android:clipChildren="false"
@@ -765,6 +830,36 @@
                             android:gravity="center"
                             android:paddingVertical="8dp"
                             android:text="@string/_7" />
+                        
+                        <TextView
+                            android:id="@+id/textSize8"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_8" />
+                        
+                        <TextView
+                            android:id="@+id/textSize9"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_9" />
+                        
+                        <TextView
+                            android:id="@+id/textSize10"
+                            style="@style/TextSmall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="@string/_10" />
 
                     </LinearLayout>
 
@@ -950,65 +1045,7 @@
                         android:text="@string/off" />
                 </FrameLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/twitter"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:text="@string/twitter" />
-
-                <TextView
-                    android:id="@+id/share"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:text="@string/share" />
-
-                <TextView
-                    android:id="@+id/rate"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:text="@string/rate" />
-
-                <TextView
-                    android:id="@+id/github"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:text="@string/github" />
-
-                <TextView
-                    android:id="@+id/privacy"
-                    style="@style/TextSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:text="@string/privacy" />
-            </LinearLayout>
-
+            
             <TextView
                 android:id="@+id/footer"
                 style="@style/TextSmall"

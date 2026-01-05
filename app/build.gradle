@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "app.olauncher"
+        applicationId "app.slauncher"
         minSdkVersion 24
         targetSdkVersion 35
         versionCode 95
@@ -41,7 +41,7 @@ android {
         viewBinding = true
         buildConfig = true
     }
-    namespace 'app.olauncher'
+    namespace 'app.slauncher'
 }
 
 dependencies {

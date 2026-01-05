@@ -31,7 +31,7 @@
             style="@style/TextDefault"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
+            android:fontFamily="?attr/appFont"
             android:format12Hour="h:mm"
             android:textSize="@dimen/time_size"
             tools:text="02:34" />
@@ -127,39 +127,6 @@
             android:hint="@string/app"
             android:paddingVertical="@dimen/home_app_padding_vertical"
             android:tag="@string/tag_5"
-            android:visibility="gone"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/homeApp6"
-            style="@style/TextLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/app"
-            android:paddingVertical="@dimen/home_app_padding_vertical"
-            android:tag="@string/tag_6"
-            android:visibility="gone"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/homeApp7"
-            style="@style/TextLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/app"
-            android:paddingVertical="@dimen/home_app_padding_vertical"
-            android:tag="@string/tag_7"
-            android:visibility="gone"
-            tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/homeApp8"
-            style="@style/TextLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/app"
-            android:paddingVertical="@dimen/home_app_padding_vertical"
-            android:tag="@string/tag_8"
             android:visibility="gone"
             tools:visibility="visible" />
 

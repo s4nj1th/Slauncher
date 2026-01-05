@@ -1,72 +1,53 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Chinese -->
+<?xml version="1.0" encoding="utf-8"?><!-- Chinese (fallback copy of base strings) -->
 <resources>
-    <string name="app">应用程序</string>
-    <string name="set_as_default_launcher">设置为默认启动器</string>
-    <string name="set_as_default_launcher_u"><u>设置为默认启动器</u></string>
-    <string name="set_as_default_launcher_first">设置为默认启动器</string>
-    <string name="app_drawer_tips">提示：输入应用程序名称以查找并启动它</string>
-    <string name="okay">好的</string>
-    <string name="cool">非常棒！</string>
-    <string name="tip_start_typing_for_rename">提示：开始输入应用程序重命名选项</string>
-    <string name="your_wallpaper_will_update_shortly">您的壁纸即将更新</string>
-    <string name="olauncher_is_not_default_launcher">Olauncher 不是默认启动器。 每日壁纸更新可能会失败。</string>
-    <string name="long_press_to_enable">长按即可启用</string>
-    <string name="no_hidden_apps">没有隐藏的应用程序</string>
-    <string name="hidden_apps">隐藏的应用程序</string>
-    <string name="hidden_apps_message">注意：点击此设置页面顶部的“Olauncher”即可找到隐藏的应用程序。
-        \n\n更多详细信息请参阅下面的“关于”页面。</string>
-    <string name="swipe_down_for">向下滑动查看</string>
-    <string name="search">搜索</string>
-    <string name="notifications">通知</string>
-    <string name="accessibility_disclosure">请在您设备的设置中打开或关闭 Olauncher 的辅助服务以启用或禁用此功能。
-        \n\n请注意，此服务仅用于让您使用双击手势关闭设备的屏幕。 我们的无障碍服务不收集或共享任何数据。</string>
-    <string name="accept">接受</string>
-    <string name="permission">允许</string>
-    <string name="double_tap_lock">双击即可锁定</string>
-    <string name="enable">启用</string>
-    <string name="disable">禁用</string>
-    <string name="not_working"><u>不工作？</u></string>
-    <string name="info">信息</string>
-    <string name="delete">删除</string>
-    <string name="text_size">字体大小</string>
-    <string name="enabled">启用</string>
-    <string name="disabled">禁用</string>
-    <string name="please_turn_on_double_tap_to_unlock">请打开双击以锁定</string>
-    <string name="launcher_failed_to_lock_device">Olauncher 无法锁定设备。 请检查您的应用程序设置。</string>
-    <string name="long_press_to_select_app">长按选择应用程序</string>
-    <string name="unable_to_open_app">无法打开应用程序信息</string>
-    <string name="copied">已复制</string>
-    <string name="system_app_cannot_delete">系统应用，无法删除</string>
-    <string name="type_a_new_app_name_first">首先输入新的应用程序名称</string>
-    <string name="adapter_show">显示</string>
-    <string name="adapter_hide">隐藏</string>
-    <string name="app_text_color">文字颜色</string>
-    <string name="double_tap_to_lock_screen">双击即可锁定</string>
-    <string name="admin_permission_message">Olauncher 承诺负责任地使用锁屏权限。 Olauncher 不收集或共享任何数据。</string>
-    <string name="about">关于</string>
-    <string name="off">否</string>
-    <string name="on">是</string>
-    <string name="black">黑色</string>
-    <string name="white">白色</string>
-    <string name="change_default_launcher">更改默认启动器</string>
-    <string name="privacy">隐私</string>
-    <string name="share">分享</string>
-    <string name="share_now">分享</string>
-    <string name="rate">评分</string>
-    <string name="rate_now">评分</string>
-    <string name="follow">关注</string>
-    <string name="email">电子邮件</string>
+    <string name="app_name" translatable="false">Slauncher</string>
+    <string name="github" translatable="false">Github</string>
+    <string name="lock_layout_description" translatable="false">lock layout description to be used a unique id to lock screen</string>
+    <string name="slauncher_pro" translatable="false">Slauncher Pro</string>
+    <string name="digital_minimalism" translatable="false"><u>Digital Minimalism</u></string>
+    <string name="new_app_note_to_self" translatable="false"><u>New app: Note to Self</u></string>
+    <string name="day_battery" formatted="false" translatable="false">%s, %d%%</string>
+    <string name="tag_0" translatable="false">0</string>
+    <string name="tag_1" translatable="false">1</string>
+    <string name="tag_2" translatable="false">2</string>
+    <string name="tag_3" translatable="false">3</string>
+    <string name="tag_4" translatable="false">4</string>
+    <string name="tag_5" translatable="false">5</string>
+    <string name="tag_6" translatable="false">6</string>
+    <string name="tag_7" translatable="false">7</string>
+    <string name="tag_8" translatable="false">8</string>
+    <string name="time_spent_min" translatable="false"><b>%1$sm</b></string>
+    <string name="time_spent_hour" translatable="false">%1$sh %2$sm</string>
 
-    <string name="donate">捐赠</string>
-    <string name="swipe_up_for_apps">1. 向上滑动查看所有应用\n2.长按任意位置进行设置</string>
-    <string name="apps_on_home_screen">主屏幕上的应用程序</string>
-    <string name="daily_wallpaper_update">每日新壁纸</string>
-    <string name="left">左对齐</string>
-    <string name="right">右对齐</string>
-    <string name="center">居中</string>
-    <string name="home_layout_alignment">应用对齐方式</string>
-    <string name="swipe_left_app">向左滑动应用程序</string>
-    <string name="swipe_right_app">向右滑动应用程序</string>
+    <string name="app">App</string>
+    <string name="set_as_default_launcher">Set as default launcher</string>
+    <string name="set_as_default_launcher_u"><u>Set as default launcher</u></string>
+    <string name="set_as_default_launcher_first">Set Slauncher default first</string>
+    <string name="app_text_color">Text color</string>
+    <string name="double_tap_to_lock_screen">Double tap to lock</string>
+    <string name="admin_permission_message">Slauncher promises to use lock screen permission responsibly. Slauncher does not collect or share any data.</string>
+    <string name="about">About</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="black">Black</string>
+    <string name="white">White</string>
+    <string name="change_default_launcher">Change default launcher</string>
+        <string name="share">Share</string>
+    <string name="share_now">Share now</string>
+    <string name="rate">Rate</string>
+    <string name="rate_now">Rate now</string>
+    <string name="follow">Follow</string>
+    <string name="email">Email</string>
+    <string name="donate">Donate</string>
+    <string name="swipe_up_for_apps">1. Swipe up for all apps\n2. Long press anywhere for settings</string>
+    <string name="apps_on_home_screen">Apps on home screen</string>
+    <string name="daily_wallpaper_update">Daily new wallpaper</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="center">Center</string>
+    <string name="home_layout_alignment">App alignment</string>
+    <string name="swipe_left_app">Swipe left app</string>
+    <string name="swipe_right_app">Swipe right app</string>
     <string name="_0">0</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
@@ -76,71 +57,102 @@
     <string name="_6">6</string>
     <string name="_7">7</string>
     <string name="_8">8</string>
-    <string name="auto_show_keyboard">自动显示键盘</string>
-    <string name="hide">隐藏</string>
-    <string name="status_bar">显示状态栏</string>
-    <string name="rename">改名</string>
-    <string name="show_date_time">显示日期时间</string>
-    <string name="appearance">外观</string>
-    <string name="gestures">手势</string>
-    <string name="theme_mode">主题模式</string>
-    <string name="system_default">系统</string>
-    <string name="dark">黑暗</string>
-    <string name="light">光</string>
-    <string name="welcome_to_olauncher_settings">欢迎来到设置！
-        \n\n请记住，如果您有任何问题，我们的“关于”页面有答案。</string>
-    <string name="rate_us_message">您好，您不会再看到此消息。
-        \n\n如果您喜欢 Olauncher，能给我们一个 5 星评价吗？ 它帮助我们提高排名并使我们高兴。 谢谢你！</string>
-    <string name="share_message">你好，我们需要你的帮助！去年我们的下载量突破了一百万次。今年我们希望再增加一百万，但我们无法单独做到这一点。
-        \n\n您能与您的朋友分享 Olauncher 吗？谢谢您，祝您有美好的一天！</string>
-    <string name="keyboard_message">您好，键盘是在 Olauncher 中查找和启动应用程序的最快方式。我们可以要求您再保留几天?
-        \n\n然后再决定吗？选择权永远在你手中。</string>
-    <string name="digital_wellbeing_message">如果您想为某些应用程序设置时间限制，Android 的数字健康功能可以帮助您做到这一点。
-        \n\n请在手机设置中搜索数字健康并启用它。</string>
-    <string name="app_usage_message">要在主屏幕上显示/隐藏您的屏幕时间，请允许或拒绝应用程序使用权限。
-        \n\n注意：不收集应用程序使用数据。所有数据都在您的设备上处理。</string>
-    <string name="pro_message">Olauncher 还有一个名为 Pro Launcher 的专业版。它具有额外的功能，如天气、部件、字体、文件夹、AMOLED 壁纸等。
-        \n\n这也是支持 Olauncher 开发者的最佳方式。快来看看吧！</string>
-    <string name="wallpaper_message">Olauncher每天提供美丽的新壁纸。让你的主屏幕每天焕然一新，免费！
-        \n\n想试试吗？</string>
-    <string name="accessibility_service_description">请在手机设置中搜索数字健康并启用它。</string>
-    <string name="support_olauncher_for_free">使用我们的亚马逊附属链接免费支持 Olauncher。</string>
-    <string name="support_olauncher_message">每次您使用我们的链接购买商品时，我们都会获得少量佣金。请保存链接并在网上购物时使用它。 谢谢！</string>
-    <string name="open">打开链接</string>
-    <string name="copy">复制</string>
-    <string name="close">关闭</string>
-    <string name="not_now">暂时不要</string>
-    <string name="public_roadmap">Olauncher 公共路线图</string>
+    <string name="app_drawer_tips">Tip: Start typing an app name to auto-launch it</string>
+    <string name="okay">Okay</string>
+    <string name="cool">Cool!</string>
+    <string name="auto_show_keyboard">Auto show keyboard</string>
+    <string name="hide">Hide</string>
+    <string name="status_bar">Status bar on top</string>
+    <string name="rename">Rename</string>
+    <string name="show_date_time">Show date time</string>
+    <string name="appearance">Appearance</string>
+    <string name="gestures">Gestures</string>
+    <string name="theme_mode">Theme mode</string>
+    <string name="system_default">System</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="welcome_to_slauncher_settings">Welcome to the settings!
+        \n\nRemember, if you have any questions, our About page has the answer.</string>
+    <string name="rate_us_message">Hi, you won\'t see this message again.
+        \n\nIf you\'re finding Slauncher useful, could you please leave a 5-star review? It\'ll mean the world to us. Thank you!</string>
+    <string name="share_message">We need your help! We believe everyone should know about Slauncher and its benefits, but we can\'t do it alone.
+        \n\nCould you please share Slauncher with your friends, family, and followers? Thank you for your support! ❤</string>
+    <string name="keyboard_message">Hi, keyboard is the fastest way to find and launch apps in Slauncher. Can we request you to keep this On for a few more days and then decide?
+        \n\nThe choice is always yours.</string>
+    <string name="digital_wellbeing_message">If you want to set time limits for certain apps, Digital Wellbeing feature of Android can help you do it.           Please search for Digital Wellbeing in your phone settings and enable it.</string>
+    <string name="app_usage_message">To show/hide your screen time on the home screen, please allow or disallow the app usage permission.
+        \n\nNote: No app usage data is collected. Everything is processed on your device.</string>
+    <string name="pro_message">Slauncher also has a pro version called Pro Launcher. It has extra features like weather, widgets, fonts, folders, AMOLED wallpapers, and so on.
+        \n\nIt\'s also the best way to support the developers of Slauncher. Check it out!</string>
+        <string name="accessibility_service_description">The accessibility permission is required to enable double tap to lock. Any data acquired by Slauncher via this service will not leave your device.</string>
+    <string name="support_slauncher_for_free">Support Slauncher for free by using our Amazon affiliate link.</string>
+    <string name="support_slauncher_message">Every time you buy something using our link, we get a small commission. Please save the link and use it whenever you shop online.
+Thank you!</string>
+    <string name="open">Open link</string>
+    <string name="copy">Copy</string>
+    <string name="close">Close</string>
+    <string name="not_now">Not now</string>
+    <string name="public_roadmap">Slauncher public roadmap</string>
     <string name="instagram">Instagram</string>
-    <string name="twitter">推特</string>
-    <string name="roadmap">路线图</string>
-    <string name="date">日期</string>
-    <string name="date_only">仅限日期</string>
-    <string name="bottom_on">底部：打开</string>
-    <string name="bottom_off">底部：关闭</string>
-    <string name="please_set_olauncher_as_default_first">请先将 Olauncher 设置为默认启动器</string>
-    <string name="affiliate">联盟</string>
-    <string name="app_not_found">找不到应用程序</string>
-    <string name="unable_to_launch_app">无法启动应用程序</string>
-    <string name="search_for_Launcher_or_home_app">搜索启动器或家庭应用程序</string>
-    <string name="swipe_left_app_enabled">向左滑动应用程序启用</string>
-    <string name="swipe_right_app_enabled">向右滑动应用程序启用</string>
-    <string name="swipe_left_app_disabled">向左滑动应用程序已禁用</string>
-    <string name="swipe_right_app_disabled">向右滑动应用程序已禁用</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">是你在用手机，还是手机在用你？</string>
-    <string name="about_olauncher">关于 Olauncher</string>
-    <string name="learn_more">了解更多</string>
-    <string name="screen_time">屏幕时间</string>
-    <string name="did_you_know">你可知道？</string>
-    <string name="leave_a_review">发表评论</string>
-    <string name="review_message">Olauncher 现在并且永远是完全免费的。它没有广告。它不收集任何数据。最重要的是，它可以帮助您减少屏幕时间并过上更健康的数字生活。
-        \n\n我们相信切换到最小启动器是一个很好的决定。虽然我们显然有偏见，但我们希望您喜欢这次体验。请随时与我们分享您的想法！</string>
-    <string name="alignment_changed">对齐已更改 ✅</string>
-    <string name="home_screen">主屏幕</string>
-    <string name="hey">嘿</string>
-    <string name="more_features">更多功能…</string>
-    <string name="new_year_wish">愿新的一年胜过以往所有。新年快乐！</string>
-    <string name="new_year_wish_1">月过得如何并不重要。你还有一年的时间做到比以往任何时候都更好。</string>
-    <string name="cheers">干杯!</string>
-    <string name="notification_bar">通知栏</string>
-</resources><!-- Chinese -->
+    <string name="twitter">Developer</string>
+    <string name="roadmap">Roadmap</string>
+    <string name="date">Date</string>
+    <string name="date_only">Date only</string>
+    <string name="bottom_on">Bottom: On</string>
+    <string name="bottom_off">Bottom: Off</string>
+    <string name="please_set_slauncher_as_default_first">Please set Slauncher as default first</string>
+    <string name="affiliate">Affiliate</string>
+    <string name="tip_start_typing_for_rename">Tip: Start typing for app RENAME option</string>
+    <string name="hidden_apps_message">Note: Tap on \'Slauncher\' at the top of this Settings page to find your hidden apps.\n\nMore details available in our About page.</string>
+    <string name="swipe_down_for">Swipe down for</string>
+    <string name="search">Search</string>
+    <string name="notifications">Notifications</string>
+    <string name="accessibility_disclosure">Please turn on or off Slauncher\'s accessibility service in your device\'s settings to enable or disable this feature.
+    \n\nPlease note that this service is only used to let you turn off your device\'s screen using the double tap gesture. Our accessibility service does not collect or share any data.</string>
+    <string name="accept">Accept</string>
+    <string name="permission">Permission</string>
+    <string name="double_tap_lock">Double tap to lock</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="not_working"><u>Not working?</u></string>
+    <string name="info">Info</string>
+    <string name="delete">Delete</string>
+    <string name="text_size">Text size</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="please_turn_on_double_tap_to_unlock">Please turn on double tap to lock</string>
+    <string name="launcher_failed_to_lock_device">Slauncher failed to lock device.\nPlease check your app settings.</string>
+    <string name="long_press_to_select_app">Long press to select app</string>
+    <string name="unable_to_open_app">Unable to open app</string>
+    <string name="copied">Copied</string>
+    <string name="system_app_cannot_delete">System app, cannot delete</string>
+    <string name="type_a_new_app_name_first">Type a new app name first</string>
+    <string name="app_not_found">App not found</string>
+    <string name="unable_to_launch_app">Unable to launch app</string>
+    <string name="search_for_Launcher_or_home_app">Search for Launcher or Home app</string>
+    <string name="swipe_left_app_enabled">Swipe left app enabled</string>
+    <string name="swipe_right_app_enabled">Swipe right app enabled</string>
+    <string name="swipe_left_app_disabled">Swipe left app disabled</string>
+    <string name="swipe_right_app_disabled">Swipe right app disabled</string>
+    <string name="your_wallpaper_will_update_shortly">Your wallpaper will update shortly</string>
+    <string name="slauncher_is_not_default_launcher">Slauncher is not default. Wallpaper update will fail.</string>
+    <string name="long_press_to_enable">Long press to enable</string>
+    <string name="no_hidden_apps">No hidden apps</string>
+    <string name="hidden_apps">Hidden apps</string>
+    <string name="adapter_show">Show</string>
+    <string name="adapter_hide">Hide</string>
+    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Are you using your phone, or is your phone using you?</string>
+        <string name="screen_time">Screen time</string>
+    <string name="learn_more">Learn more</string>
+    <string name="did_you_know">Did you know?</string>
+    <string name="leave_a_review">Leave a review</string>
+    <string name="review_message">Slauncher is free and always will be. It has no ads, collects no data, and reduces your screen time, resulting in a healthier life.
+        \n\nWe hope you enjoy it. Tell us what you think.</string>
+    <string name="alignment_changed">Alignment changed ✅</string>
+    <string name="home_screen">Home screen</string>
+    <string name="hey">Hey</string>
+    <string name="new_year_wish">Here\'s to a year better than any before. Happy new year!</string>
+    <string name="new_year_wish_1">It doesn\'t matter how January went. You still have the rest of the year to do better than ever.</string>
+    <string name="cheers">Cheers!</string>
+    <string name="notification_bar">Notification bar</string>
+</resources>

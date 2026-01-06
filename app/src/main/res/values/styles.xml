@@ -89,10 +89,6 @@
         <item name="appFont">@font/ubuntu</item>
     </style>
 
-    <style name="AppTheme.FontLibre" parent="AppTheme">
-        <item name="appFont">@font/libre_baskerville</item>
-    </style>
-
     <style name="AppTheme.FontEBGaramond" parent="AppTheme">
         <item name="appFont">@font/ebgaramond</item>
     </style>

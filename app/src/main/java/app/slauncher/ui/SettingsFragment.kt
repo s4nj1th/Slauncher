@@ -120,7 +120,6 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             R.id.fontDefault -> updateFont(Constants.Font.DEFAULT)
             R.id.fontInter -> updateFont(Constants.Font.INTER)
             R.id.fontUbuntu -> updateFont(Constants.Font.UBUNTU)
-            R.id.fontLibre -> updateFont(Constants.Font.LIBRE_BASKERVILLE)
             R.id.fontEBGaramond -> updateFont(Constants.Font.EBGARAMOND)
             R.id.textSizeValue -> binding.textSizesLayout.visibility = View.VISIBLE
             R.id.actionAccessibility -> openAccessibilityService()
@@ -213,7 +212,6 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.fontDefault?.setOnClickListener(this)
         binding.fontInter?.setOnClickListener(this)
         binding.fontUbuntu?.setOnClickListener(this)
-        binding.fontLibre?.setOnClickListener(this)
         binding.fontEBGaramond?.setOnClickListener(this)
 
         binding.maxApps0.setOnClickListener(this)
@@ -465,7 +463,6 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.fontText?.text = when (prefs.fontSelection) {
             Constants.Font.INTER -> getString(R.string.inter)
             Constants.Font.UBUNTU -> getString(R.string.ubuntu)
-            Constants.Font.LIBRE_BASKERVILLE -> getString(R.string.libre_baskerville)
             Constants.Font.EBGARAMOND -> getString(R.string.eb_garamond)
             else -> getString(R.string.default_font)
         }

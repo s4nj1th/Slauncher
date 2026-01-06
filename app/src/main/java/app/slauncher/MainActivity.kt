@@ -69,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         when (prefs.fontSelection) {
             Constants.Font.INTER -> setTheme(R.style.AppTheme_FontInter)
             Constants.Font.UBUNTU -> setTheme(R.style.AppTheme_FontUbuntu)
-            Constants.Font.LIBRE_BASKERVILLE -> setTheme(R.style.AppTheme_FontLibre)
             Constants.Font.EBGARAMOND -> setTheme(R.style.AppTheme_FontEBGaramond)
             else -> setTheme(R.style.AppTheme_FontDefault)
         }

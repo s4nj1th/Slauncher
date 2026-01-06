@@ -159,6 +159,5 @@
     <string name="default_font">Android default</string>
     <string name="inter">Inter</string>
     <string name="ubuntu">Ubuntu</string>
-    <string name="libre_baskerville">Libre Baskerville</string>
     <string name="eb_garamond">EB Garamond</string>
 </resources>

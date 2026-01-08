@@ -1,6 +1,6 @@
 <div align="center">
-    <h1>Slauncher</h1>
     <img src="fastlane/metadata/android/en-US/images/icon.png" width="192"/>
+    <h1>Slauncher</h1>
     <p>A minimal, privacy-first Android launcher.</p>
 </div>
 

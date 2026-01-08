@@ -3,3 +3,5 @@
     <h1>Slauncher</h1>
     <p>A launcher for me.</p>
 </div>
+
+Forked from [Olauncher](https://github.com/tanujnotes/olauncher).

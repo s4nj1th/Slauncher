@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             Constants.Font.INTER -> setTheme(R.style.AppTheme_FontInter)
             Constants.Font.UBUNTU -> setTheme(R.style.AppTheme_FontUbuntu)
             Constants.Font.EBGARAMOND -> setTheme(R.style.AppTheme_FontEBGaramond)
+            Constants.Font.CRIMSONPRO -> setTheme(R.style.AppTheme_FontCrimsonPro)
             else -> setTheme(R.style.AppTheme_FontDefault)
         }
         if (isEinkDisplay()) prefs.appTheme = AppCompatDelegate.MODE_NIGHT_NO

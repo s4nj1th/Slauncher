@@ -64,6 +64,7 @@ object Constants {
         const val INTER = 1
         const val UBUNTU = 2
         const val EBGARAMOND = 3
+        const val CRIMSONPRO = 4
     }
 
     object CharacterIndicator {

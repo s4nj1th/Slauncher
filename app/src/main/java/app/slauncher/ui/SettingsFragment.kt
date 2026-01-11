@@ -121,6 +121,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             R.id.fontInter -> updateFont(Constants.Font.INTER)
             R.id.fontUbuntu -> updateFont(Constants.Font.UBUNTU)
             R.id.fontEBGaramond -> updateFont(Constants.Font.EBGARAMOND)
+            R.id.fontCrimsonPro -> updateFont(Constants.Font.CRIMSONPRO)
             R.id.textSizeValue -> binding.textSizesLayout.visibility = View.VISIBLE
             R.id.actionAccessibility -> openAccessibilityService()
             R.id.closeAccessibility -> toggleAccessibilityVisibility(false)
@@ -213,6 +214,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.fontInter?.setOnClickListener(this)
         binding.fontUbuntu?.setOnClickListener(this)
         binding.fontEBGaramond?.setOnClickListener(this)
+        binding.fontCrimsonPro?.setOnClickListener(this)
 
         binding.maxApps0.setOnClickListener(this)
         binding.maxApps1.setOnClickListener(this)
@@ -464,6 +466,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             Constants.Font.INTER -> getString(R.string.inter)
             Constants.Font.UBUNTU -> getString(R.string.ubuntu)
             Constants.Font.EBGARAMOND -> getString(R.string.eb_garamond)
+            Constants.Font.CRIMSONPRO -> getString(R.string.crimson_pro)
             else -> getString(R.string.default_font)
         }
     }

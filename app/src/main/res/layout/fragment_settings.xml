@@ -680,6 +680,15 @@
                             android:gravity="center"
                             android:paddingVertical="6dp"
                             android:text="@string/eb_garamond" />
+                        
+                        <TextView
+                            android:id="@+id/fontCrimsonPro"
+                            style="@style/TextSmallBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingVertical="6dp"
+                            android:text="@string/crimson_pro" />
 
                     </LinearLayout>
 

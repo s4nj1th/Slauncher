@@ -93,6 +93,10 @@
         <item name="appFont">@font/ebgaramond</item>
     </style>
 
+    <style name="AppTheme.FontCrimsonPro" parent="AppTheme">
+        <item name="appFont">@font/crimsonpro</item>
+    </style>
+
     <style name="TextMedium" parent="TextDefault">
         <item name="android:textSize">20sp</item>
     </style>

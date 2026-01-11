@@ -36,6 +36,7 @@ class Prefs(context: Context) {
     private val SWIPE_DOWN_ACTION = "SWIPE_DOWN_ACTION"
     private val TEXT_SIZE_SCALE = "TEXT_SIZE_SCALE"
     private val FONT_SELECTION = "FONT_SELECTION"
+    private val CUSTOM_FONT_PATH = "CUSTOM_FONT_PATH"
     private val PRO_MESSAGE_SHOWN = "PRO_MESSAGE_SHOWN"
     private val HIDE_SET_DEFAULT_LAUNCHER = "HIDE_SET_DEFAULT_LAUNCHER"
     private val SCREEN_TIME_LAST_UPDATED = "SCREEN_TIME_LAST_UPDATED"
@@ -167,6 +168,10 @@ class Prefs(context: Context) {
     var fontSelection: Int
         get() = prefs.getInt(FONT_SELECTION, 3)
         set(value) = prefs.edit { putInt(FONT_SELECTION, value).apply() }
+
+    var customFontPath: String?
+        get() = prefs.getString(CUSTOM_FONT_PATH, "")
+        set(value) = prefs.edit { putString(CUSTOM_FONT_PATH, value).apply() }
 
     var proMessageShown: Boolean
         get() = prefs.getBoolean(PRO_MESSAGE_SHOWN, false)

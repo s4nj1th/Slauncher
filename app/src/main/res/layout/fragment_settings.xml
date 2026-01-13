@@ -120,7 +120,7 @@
                         android:paddingVertical="8dp"
                         android:paddingStart="24dp"
                         android:paddingEnd="8dp"
-                        tools:text="@string/_8" />
+                        tools:text="@string/_5" />
 
                                         <LinearLayout
                         android:id="@+id/appsNumSelectLayout"
@@ -194,44 +194,13 @@
                             android:gravity="center"
                             android:paddingVertical="8dp"
                             android:text="@string/_5" />
-
-                        <TextView
-                            android:id="@+id/maxApps6"
-                            style="@style/TextSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:paddingVertical="8dp"
-                            android:text="@string/_6" />
-
-                        <TextView
-                            android:id="@+id/maxApps7"
-                            style="@style/TextSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:paddingVertical="8dp"
-                            android:text="@string/_7" />
-
-                        <TextView
-                            android:id="@+id/maxApps8"
-                            style="@style/TextSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:paddingVertical="8dp"
-                            android:text="@string/_8" />
-
                     </LinearLayout>
 
                 </FrameLayout>
 
-                <!-- Media controls selection -->
+                <!-- Media controls toggle -->
                 <FrameLayout
-                    android:id="@+id/mediaControlsRow"
+                    android:id="@+id/mediaToggleRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -249,6 +218,36 @@
                         android:textColor="?attr/primaryColor" />
 
                     <TextView
+                        android:id="@+id/mediaWidgetEnabledText"
+                        style="@style/TextSmallBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="8dp"
+                        android:padding="8dp"
+                        android:text="On" />
+
+                </FrameLayout>
+
+                <!-- Choose media app row -->
+                <FrameLayout
+                    android:id="@+id/chooseMediaRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        style="@style/TextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:paddingVertical="8dp"
+                        android:text="Choose media app"
+                        android:textColor="?attr/primaryColor" />
+
+                    <TextView
                         android:id="@+id/mediaAppName"
                         style="@style/TextSmallBold"
                         android:layout_width="wrap_content"
@@ -258,22 +257,24 @@
                         android:padding="8dp"
                         android:text="None" />
 
-                    <TextView
-                        android:id="@+id/mediaWidgetEnabledText"
-                        style="@style/TextSmallBold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|bottom"
-                        android:layout_marginEnd="72dp"
-                        android:padding="8dp"
-                        android:text="On" />
+                    <ImageView
+                        android:id="@+id/chooseMediaIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_chevron_right"
+                        android:tint="?attr/primaryColor" />
 
                 </FrameLayout>
 
                 <FrameLayout
+                    android:id="@+id/enableListenerRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
 
                     <TextView
                         style="@style/TextSmall"
@@ -284,13 +285,15 @@
                         android:text="Notification listener"
                         android:textColor="?attr/primaryColor" />
 
-                    <Button
-                        android:id="@+id/enableMediaListener"
+                    <TextView
+                        android:id="@+id/enableMediaListenerText"
+                        style="@style/TextSmallBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end|center_vertical"
+                        android:layout_gravity="end|bottom"
                         android:layout_marginEnd="8dp"
-                        android:text="Enable" />
+                        android:padding="8dp"
+                        android:text="Open" />
 
                 </FrameLayout>
 

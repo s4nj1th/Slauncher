@@ -108,7 +108,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             binding.mediaWidgetEnabledText?.text = if (newVal) getString(R.string.on) else getString(R.string.off)
         }
 
-        binding.enableMediaListener?.setOnClickListener {
+        binding.enableListenerRow?.setOnClickListener {
             startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
         }
     }
@@ -226,8 +226,16 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.dateOnly.setOnClickListener(this)
         binding.swipeLeftApp.setOnClickListener(this)
         binding.swipeRightApp.setOnClickListener(this)
-        // row click follows other settings style
-        binding.mediaControlsRow?.setOnClickListener { showMediaChooserDialog() }
+        // media toggle row
+        binding.mediaToggleRow?.setOnClickListener {
+            val mediaPrefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE)
+            val newVal = !mediaPrefs.getBoolean("enabled", true)
+            mediaPrefs.edit().putBoolean("enabled", newVal).apply()
+            binding.mediaWidgetEnabledText?.text = if (newVal) getString(R.string.on) else getString(R.string.off)
+        }
+
+        // choose media row opens chooser
+        binding.chooseMediaRow?.setOnClickListener { showMediaChooserDialog() }
         binding.swipeDownAction.setOnClickListener(this)
         binding.search.setOnClickListener(this)
         binding.notifications.setOnClickListener(this)

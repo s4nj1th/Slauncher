@@ -127,6 +127,14 @@
 
     </LinearLayout>
 
+    <!-- Media controller container -->
+    <FrameLayout
+        android:id="@+id/media_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp" />
+
     <TextView
         android:id="@+id/firstRunTips"
         style="@style/TextSmall"

@@ -30,6 +30,7 @@ import app.slauncher.data.AppModel
 import app.slauncher.data.Constants
 import app.slauncher.data.Prefs
 import app.slauncher.databinding.FragmentHomeBinding
+import app.slauncher.ui.HomeMediaControllerFragment
 import app.slauncher.helper.appUsagePermissionGranted
 import app.slauncher.helper.dpToPx
 import app.slauncher.helper.expandNotificationDrawer
@@ -76,6 +77,13 @@ class HomeFragment : Fragment(), View.OnClickListener, View.OnLongClickListener 
         setHomeAlignment(prefs.homeAlignment)
         initSwipeTouchListener()
         initClickListeners()
+
+        // attach the media controller fragment into the container
+        if (childFragmentManager.findFragmentById(R.id.media_container) == null) {
+            childFragmentManager.beginTransaction()
+                .replace(R.id.media_container, HomeMediaControllerFragment())
+                .commit()
+        }
     }
 
     override fun onResume() {

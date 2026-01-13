@@ -1,4 +1,4 @@
-package com.slauncher.obsolete;
+package app.slauncher.ui;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -21,6 +21,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import app.slauncher.media.MediaNotificationListener;
 import app.slauncher.R;
 
 import java.util.ArrayList;
@@ -58,7 +59,13 @@ public class HomeMediaControllerFragment extends Fragment {
         mediaSessionManager = (MediaSessionManager) requireContext().getSystemService(Context.MEDIA_SESSION_SERVICE);
         prefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE);
         selectedPkg = prefs.getString("selected_pkg", null);
-        requireContext().registerReceiver(sessionsReceiver, new IntentFilter("com.slauncher.MEDIA_SESSIONS"));
+        IntentFilter filter = new IntentFilter("com.slauncher.MEDIA_SESSIONS");
+        if (android.os.Build.VERSION.SDK_INT >= 34) {
+            // use the 5-arg overload to ensure flags are honored at runtime
+            requireContext().registerReceiver(sessionsReceiver, filter, null, null, android.content.Context.RECEIVER_NOT_EXPORTED);
+        } else {
+            requireContext().registerReceiver(sessionsReceiver, filter);
+        }
     }
 
     @Override
@@ -174,13 +181,33 @@ public class HomeMediaControllerFragment extends Fragment {
 
     private void updateUi() {
         if (titleView == null) return;
-        if (selectedController != null && selectedController.getMetadata() != null) {
+        boolean visible = false;
+        try {
+            ComponentName listenerComp = new ComponentName(requireContext(), MediaNotificationListener.class);
+            List<MediaController> controllers = mediaSessionManager.getActiveSessions(listenerComp);
+            if (controllers != null && !controllers.isEmpty()) visible = true;
+        } catch (SecurityException e) {
+            visible = false;
+        }
+
+        View root = getView();
+        if (root != null) {
+            root.setVisibility(visible ? View.VISIBLE : View.GONE);
+        }
+
+        if (visible && selectedController != null && selectedController.getMetadata() != null) {
             CharSequence title = selectedController.getMetadata().getDescription().getTitle();
             titleView.setText(title != null ? title : selectedController.getPackageName());
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);
+        } else if (visible) {
+            titleView.setText("No media");
+            playPause.setEnabled(true);
+            next.setEnabled(true);
+            prev.setEnabled(true);
         } else {
+            // hidden: ensure controls disabled
             titleView.setText("No media");
             playPause.setEnabled(false);
             next.setEnabled(false);

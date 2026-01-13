@@ -115,6 +115,12 @@
     <string name="disable">Disable</string>
     <string name="not_working"><u>Not working?</u></string>
     <string name="info">Info</string>
+    <string name="no_active_media">No active media</string>
+    <string name="start_playback_first">Start playback in an app first.</string>
+    <string name="select_media_app">Select media app</string>
+    <string name="permission_required">Permission required</string>
+    <string name="enable_notification_listener">Notification listener permission is required. Please enable it in settings.</string>
+    <string name="open_settings">Open settings</string>
     <string name="delete">Delete</string>
     <string name="text_size">Text size</string>
     <string name="enabled">Enabled</string>

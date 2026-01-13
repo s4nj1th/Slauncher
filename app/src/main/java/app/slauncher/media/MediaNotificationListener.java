@@ -1,4 +1,4 @@
-package com.slauncher.obsolete;
+package app.slauncher.media;
 
 import android.content.ComponentName;
 import android.content.Intent;

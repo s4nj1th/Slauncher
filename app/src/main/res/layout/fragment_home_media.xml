@@ -3,6 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
     android:padding="8dp">
     <TextView android:id="@+id/media_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No media"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btn_choose_app" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Choose App"/>
+        <Button android:id="@+id/btn_enable_listener" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enable Listener"/>
+    </LinearLayout>
+
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
         <Button android:id="@+id/btn_prev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Prev"/>
         <Button android:id="@+id/btn_play_pause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Play/Pause"/>

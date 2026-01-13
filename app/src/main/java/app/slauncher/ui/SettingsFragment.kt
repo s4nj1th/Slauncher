@@ -26,6 +26,11 @@ import app.slauncher.R
 import app.slauncher.data.Constants
 import app.slauncher.data.Prefs
 import app.slauncher.databinding.FragmentSettingsBinding
+import android.app.AlertDialog
+import android.media.session.MediaController
+import android.media.session.MediaSessionManager
+import android.content.IntentFilter
+import android.content.DialogInterface
 import app.slauncher.helper.animateAlpha
 import app.slauncher.helper.appUsagePermissionGranted
 import app.slauncher.helper.getColorFromAttr
@@ -82,6 +87,18 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         populateSwipeDownAction()
         initClickListeners()
         initObservers()
+        // show currently selected media app (if any)
+        val mediaPrefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE)
+        val sel = mediaPrefs.getString("selected_pkg", "") ?: ""
+        if (sel.isNotEmpty()) {
+            try {
+                val pm = requireContext().packageManager
+                val ai = pm.getApplicationInfo(sel, 0)
+                binding.mediaAppName?.text = pm.getApplicationLabel(ai)
+            } catch (e: Exception) {
+                binding.mediaAppName?.text = sel
+            }
+        }
     }
 
     override fun onClick(view: View) {
@@ -197,6 +214,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.dateOnly.setOnClickListener(this)
         binding.swipeLeftApp.setOnClickListener(this)
         binding.swipeRightApp.setOnClickListener(this)
+        binding.chooseMediaApp?.setOnClickListener { showMediaChooserDialog() }
         binding.swipeDownAction.setOnClickListener(this)
         binding.search.setOnClickListener(this)
         binding.notifications.setOnClickListener(this)
@@ -258,6 +276,57 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         }
         viewModel.updateSwipeApps.observe(viewLifecycleOwner) {
             populateSwipeApps()
+        }
+    }
+
+    private fun showMediaChooserDialog() {
+        try {
+            val mediaSessionManager = requireContext().getSystemService(Context.MEDIA_SESSION_SERVICE) as MediaSessionManager
+            val listenerComp = ComponentName(requireContext(), app.slauncher.media.MediaNotificationListener::class.java)
+            val controllers: List<MediaController> = mediaSessionManager.getActiveSessions(listenerComp)
+            if (controllers.isEmpty()) {
+                AlertDialog.Builder(requireContext())
+                    .setTitle(R.string.no_active_media)
+                    .setMessage(R.string.start_playback_first)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+                return
+            }
+
+            val labels = ArrayList<String>()
+            val pkgs = ArrayList<String>()
+            val pm = requireContext().packageManager
+            for (c in controllers) {
+                val pkg = c.packageName
+                var label = pkg
+                try {
+                    val ai = pm.getApplicationInfo(pkg, 0)
+                    val appLabel = pm.getApplicationLabel(ai)
+                    if (appLabel != null) label = appLabel.toString()
+                } catch (ignored: Exception) { }
+                labels.add(label)
+                pkgs.add(pkg)
+            }
+
+            val items = labels.toTypedArray()
+            AlertDialog.Builder(requireContext())
+                .setTitle(R.string.select_media_app)
+                .setItems(items) { _: DialogInterface, which: Int ->
+                    val pkg = pkgs[which]
+                    val prefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE)
+                    prefs.edit().putString("selected_pkg", pkg).apply()
+                    binding.mediaAppName?.text = labels[which]
+                }
+                .show()
+        } catch (e: SecurityException) {
+            AlertDialog.Builder(requireContext())
+                .setTitle(R.string.permission_required)
+                .setMessage(R.string.enable_notification_listener)
+                .setPositiveButton(R.string.open_settings) { _, _ ->
+                    startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
         }
     }
 

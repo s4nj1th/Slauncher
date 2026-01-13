@@ -15,6 +15,7 @@
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
 
     <application
         android:name=".MyApp"
@@ -84,6 +85,15 @@
                 android:resource="@xml/accessibility_service_config" />
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".media.MediaNotificationListener"
+            android:label="Media Listener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
 

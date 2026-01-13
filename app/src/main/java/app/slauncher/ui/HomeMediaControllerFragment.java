@@ -15,7 +15,7 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -31,7 +31,9 @@ public class HomeMediaControllerFragment extends Fragment {
     private MediaSessionManager mediaSessionManager;
     private MediaController selectedController;
     private TextView titleView;
-    private android.view.View playPause, next, prev;
+    private ImageButton playPause;
+    private android.view.View next, prev;
+    private MediaController.Callback controllerCallback;
     private SharedPreferences prefs;
     private String selectedPkg;
 
@@ -84,6 +86,7 @@ public class HomeMediaControllerFragment extends Fragment {
             } else {
                 selectedController.getTransportControls().play();
             }
+            updatePlayPauseIcon();
         });
         next.setOnClickListener(vv -> {
             if (selectedController != null) selectedController.getTransportControls().skipToNext();
@@ -153,10 +156,29 @@ public class HomeMediaControllerFragment extends Fragment {
         }
     }
 
+    private void ensureControllerCallback() {
+        if (controllerCallback != null) return;
+        controllerCallback = new MediaController.Callback() {
+            @Override
+            public void onPlaybackStateChanged(android.media.session.PlaybackState state) {
+                requireActivity().runOnUiThread(() -> updatePlayPauseIcon());
+            }
+
+            @Override
+            public void onMetadataChanged(android.media.MediaMetadata metadata) {
+                requireActivity().runOnUiThread(() -> updateUi());
+            }
+        };
+    }
+
     private void selectControllerForPackage(String pkg) {
         try {
             ComponentName listenerComp = new ComponentName(requireContext(), MediaNotificationListener.class);
             List<MediaController> controllers = mediaSessionManager.getActiveSessions(listenerComp);
+            // unregister previous callback
+            if (selectedController != null && controllerCallback != null) {
+                try { selectedController.unregisterCallback(controllerCallback); } catch (Exception ignored) {}
+            }
             selectedController = null;
             if (controllers != null) {
                 for (MediaController c : controllers) {
@@ -165,6 +187,10 @@ public class HomeMediaControllerFragment extends Fragment {
                         break;
                     }
                 }
+            }
+            if (selectedController != null) {
+                ensureControllerCallback();
+                try { selectedController.registerCallback(controllerCallback); } catch (Exception ignored) {}
             }
         } catch (SecurityException e) {
             selectedController = null;
@@ -200,11 +226,13 @@ public class HomeMediaControllerFragment extends Fragment {
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);
+            updatePlayPauseIcon();
         } else if (visible) {
             titleView.setText("No media");
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);
+            updatePlayPauseIcon();
         } else {
             // hidden: ensure controls disabled
             titleView.setText("No media");
@@ -214,9 +242,23 @@ public class HomeMediaControllerFragment extends Fragment {
         }
     }
 
+    private void updatePlayPauseIcon() {
+        if (playPause == null) return;
+        int state = selectedController != null && selectedController.getPlaybackState() != null
+                ? selectedController.getPlaybackState().getState() : 0;
+        if (state == android.media.session.PlaybackState.STATE_PLAYING) {
+            playPause.setImageResource(R.drawable.ic_pause);
+        } else {
+            playPause.setImageResource(R.drawable.ic_play_arrow);
+        }
+    }
+
     @Override
     public void onDestroy() {
         requireContext().unregisterReceiver(sessionsReceiver);
+        if (selectedController != null && controllerCallback != null) {
+            try { selectedController.unregisterCallback(controllerCallback); } catch (Exception ignored) {}
+        }
         super.onDestroy();
     }
 }

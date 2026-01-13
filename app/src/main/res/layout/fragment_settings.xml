@@ -231,10 +231,13 @@
 
                 <!-- Media controls selection -->
                 <FrameLayout
+                    android:id="@+id/mediaControlsRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:animateLayoutChanges="true">
+                    android:animateLayoutChanges="true"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
 
                     <TextView
                         style="@style/TextSmall"
@@ -255,13 +258,39 @@
                         android:padding="8dp"
                         android:text="None" />
 
+                    <TextView
+                        android:id="@+id/mediaWidgetEnabledText"
+                        style="@style/TextSmallBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginEnd="72dp"
+                        android:padding="8dp"
+                        android:text="On" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        style="@style/TextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:paddingVertical="8dp"
+                        android:text="Notification listener"
+                        android:textColor="?attr/primaryColor" />
+
                     <Button
-                        android:id="@+id/chooseMediaApp"
+                        android:id="@+id/enableMediaListener"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
-                        android:layout_marginEnd="72dp"
-                        android:text="Choose" />
+                        android:layout_marginEnd="8dp"
+                        android:text="Enable" />
 
                 </FrameLayout>
 

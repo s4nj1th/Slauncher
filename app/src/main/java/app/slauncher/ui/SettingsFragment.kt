@@ -87,7 +87,7 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         populateSwipeDownAction()
         initClickListeners()
         initObservers()
-        // show currently selected media app (if any)
+        // show currently selected media app (if any) and widget enabled state
         val mediaPrefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE)
         val sel = mediaPrefs.getString("selected_pkg", "") ?: ""
         if (sel.isNotEmpty()) {
@@ -98,6 +98,18 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
             } catch (e: Exception) {
                 binding.mediaAppName?.text = sel
             }
+        }
+
+        val enabled = mediaPrefs.getBoolean("enabled", true)
+        binding.mediaWidgetEnabledText?.text = if (enabled) getString(R.string.on) else getString(R.string.off)
+        binding.mediaWidgetEnabledText?.setOnClickListener {
+            val newVal = !mediaPrefs.getBoolean("enabled", true)
+            mediaPrefs.edit().putBoolean("enabled", newVal).apply()
+            binding.mediaWidgetEnabledText?.text = if (newVal) getString(R.string.on) else getString(R.string.off)
+        }
+
+        binding.enableMediaListener?.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
         }
     }
 
@@ -214,7 +226,8 @@ class SettingsFragment : Fragment(), View.OnClickListener, View.OnLongClickListe
         binding.dateOnly.setOnClickListener(this)
         binding.swipeLeftApp.setOnClickListener(this)
         binding.swipeRightApp.setOnClickListener(this)
-        binding.chooseMediaApp?.setOnClickListener { showMediaChooserDialog() }
+        // row click follows other settings style
+        binding.mediaControlsRow?.setOnClickListener { showMediaChooserDialog() }
         binding.swipeDownAction.setOnClickListener(this)
         binding.search.setOnClickListener(this)
         binding.notifications.setOnClickListener(this)

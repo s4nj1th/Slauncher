@@ -68,7 +68,7 @@
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="112dp"
-        android:paddingBottom="48dp">
+        android:paddingBottom="160dp">
 
         <TextView
             android:id="@+id/homeApp1"

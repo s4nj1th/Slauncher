@@ -31,7 +31,7 @@ public class HomeMediaControllerFragment extends Fragment {
     private MediaSessionManager mediaSessionManager;
     private MediaController selectedController;
     private TextView titleView;
-    private Button playPause, next, prev, chooseApp, enableListener;
+    private android.view.View playPause, next, prev;
     private SharedPreferences prefs;
     private String selectedPkg;
 
@@ -75,8 +75,6 @@ public class HomeMediaControllerFragment extends Fragment {
         playPause = v.findViewById(R.id.btn_play_pause);
         next = v.findViewById(R.id.btn_next);
         prev = v.findViewById(R.id.btn_prev);
-        chooseApp = v.findViewById(R.id.btn_choose_app);
-        enableListener = v.findViewById(R.id.btn_enable_listener);
 
         playPause.setOnClickListener(view -> {
             if (selectedController == null) return;
@@ -94,12 +92,7 @@ public class HomeMediaControllerFragment extends Fragment {
             if (selectedController != null) selectedController.getTransportControls().skipToPrevious();
         });
 
-        chooseApp.setOnClickListener(vv -> showChooserDialog());
-
-        enableListener.setOnClickListener(vv -> {
-            Intent intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
-            startActivity(intent);
-        });
+        // chooser and enable-listener controls moved to Settings screen.
 
         updateUi();
         return v;
@@ -189,6 +182,12 @@ public class HomeMediaControllerFragment extends Fragment {
         } catch (SecurityException e) {
             visible = false;
         }
+
+        // respect user's setting for enabling the media widget
+        try {
+            boolean enabled = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE).getBoolean("enabled", true);
+            visible = visible && enabled;
+        } catch (Exception ignored) { }
 
         View root = getView();
         if (root != null) {

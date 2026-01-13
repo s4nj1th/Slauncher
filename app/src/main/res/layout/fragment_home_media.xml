@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:padding="8dp">
-    <TextView android:id="@+id/media_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="No media"/>
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_horizontal">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-        <Button android:id="@+id/btn_choose_app" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Choose App"/>
-        <Button android:id="@+id/btn_enable_listener" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enable Listener"/>
+    <TextView
+        android:id="@+id/media_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No media"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:paddingVertical="4dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <ImageButton
+            android:id="@+id/btn_prev"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_skip_previous"
+            android:contentDescription="Previous"
+            android:tint="?attr/primaryColor" />
+
+        <ImageButton
+            android:id="@+id/btn_play_pause"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_play_arrow"
+            android:contentDescription="Play/Pause"
+            android:tint="?attr/primaryColor" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_skip_next"
+            android:contentDescription="Next"
+            android:tint="?attr/primaryColor" />
+
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-        <Button android:id="@+id/btn_prev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Prev"/>
-        <Button android:id="@+id/btn_play_pause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Play/Pause"/>
-        <Button android:id="@+id/btn_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Next"/>
-    </LinearLayout>
 </LinearLayout>

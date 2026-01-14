@@ -36,6 +36,7 @@ public class HomeMediaControllerFragment extends Fragment {
     private MediaController.Callback controllerCallback;
     private SharedPreferences prefs;
     private String selectedPkg;
+    private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
 
     private final BroadcastReceiver sessionsReceiver = new BroadcastReceiver() {
         @Override
@@ -61,6 +62,15 @@ public class HomeMediaControllerFragment extends Fragment {
         mediaSessionManager = (MediaSessionManager) requireContext().getSystemService(Context.MEDIA_SESSION_SERVICE);
         prefs = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE);
         selectedPkg = prefs.getString("selected_pkg", null);
+        prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if ("enabled".equals(key)) {
+                    if (getActivity() != null) getActivity().runOnUiThread(() -> updateUi());
+                }
+            }
+        };
+        prefs.registerOnSharedPreferenceChangeListener(prefListener);
         IntentFilter filter = new IntentFilter("com.slauncher.MEDIA_SESSIONS");
         if (android.os.Build.VERSION.SDK_INT >= 34) {
             // use the 5-arg overload to ensure flags are honored at runtime
@@ -105,6 +115,8 @@ public class HomeMediaControllerFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (selectedPkg != null) selectControllerForPackage(selectedPkg);
+        // Refresh UI to respect latest settings (show/hide when user toggles media widget)
+        updateUi();
     }
 
     private void showChooserDialog() {
@@ -200,45 +212,50 @@ public class HomeMediaControllerFragment extends Fragment {
 
     private void updateUi() {
         if (titleView == null) return;
-        boolean visible = false;
-        try {
-            ComponentName listenerComp = new ComponentName(requireContext(), MediaNotificationListener.class);
-            List<MediaController> controllers = mediaSessionManager.getActiveSessions(listenerComp);
-            if (controllers != null && !controllers.isEmpty()) visible = true;
-        } catch (SecurityException e) {
-            visible = false;
-        }
-
         // respect user's setting for enabling the media widget
+        boolean enabled = true;
         try {
-            boolean enabled = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE).getBoolean("enabled", true);
-            visible = visible && enabled;
+            enabled = requireContext().getSharedPreferences("home_media", Context.MODE_PRIVATE).getBoolean("enabled", true);
         } catch (Exception ignored) { }
 
         View root = getView();
         if (root != null) {
-            root.setVisibility(visible ? View.VISIBLE : View.GONE);
+            root.setVisibility(enabled ? View.VISIBLE : View.GONE);
         }
 
-        if (visible && selectedController != null && selectedController.getMetadata() != null) {
+        if (!enabled) {
+            // when disabled, make sure controls are inactive
+            titleView.setText("No media");
+            playPause.setEnabled(false);
+            next.setEnabled(false);
+            prev.setEnabled(false);
+            return;
+        }
+
+        // Widget is enabled; show placeholder if no active sessions or show metadata when available
+        boolean hasControllers = false;
+        try {
+            ComponentName listenerComp = new ComponentName(requireContext(), MediaNotificationListener.class);
+            List<MediaController> controllers = mediaSessionManager.getActiveSessions(listenerComp);
+            if (controllers != null && !controllers.isEmpty()) hasControllers = true;
+        } catch (SecurityException e) {
+            hasControllers = false;
+        }
+
+        if (hasControllers && selectedController != null && selectedController.getMetadata() != null) {
             CharSequence title = selectedController.getMetadata().getDescription().getTitle();
             titleView.setText(title != null ? title : selectedController.getPackageName());
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);
             updatePlayPauseIcon();
-        } else if (visible) {
-            titleView.setText("No media");
-            playPause.setEnabled(true);
-            next.setEnabled(true);
-            prev.setEnabled(true);
-            updatePlayPauseIcon();
         } else {
-            // hidden: ensure controls disabled
             titleView.setText("No media");
-            playPause.setEnabled(false);
-            next.setEnabled(false);
-            prev.setEnabled(false);
+            // enable controls so user can attempt play, but keep them safe (controllers may be null)
+            playPause.setEnabled(selectedController != null);
+            next.setEnabled(selectedController != null);
+            prev.setEnabled(selectedController != null);
+            updatePlayPauseIcon();
         }
     }
 
@@ -256,6 +273,9 @@ public class HomeMediaControllerFragment extends Fragment {
     @Override
     public void onDestroy() {
         requireContext().unregisterReceiver(sessionsReceiver);
+        if (prefs != null && prefListener != null) {
+            try { prefs.unregisterOnSharedPreferenceChangeListener(prefListener); } catch (Exception ignored) {}
+        }
         if (selectedController != null && controllerCallback != null) {
             try { selectedController.unregisterCallback(controllerCallback); } catch (Exception ignored) {}
         }

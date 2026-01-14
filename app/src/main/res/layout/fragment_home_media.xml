@@ -16,6 +16,18 @@
         android:gravity="center"
         android:paddingVertical="4dp" />
 
+    <TextView
+        android:id="@+id/media_artist"
+        style="@style/TextDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

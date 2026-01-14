@@ -31,6 +31,7 @@ public class HomeMediaControllerFragment extends Fragment {
     private MediaSessionManager mediaSessionManager;
     private MediaController selectedController;
     private TextView titleView;
+    private TextView artistView;
     private ImageButton playPause;
     private android.view.View next, prev;
     private MediaController.Callback controllerCallback;
@@ -84,6 +85,7 @@ public class HomeMediaControllerFragment extends Fragment {
     public View onCreateView(LayoutInflater li, ViewGroup vg, Bundle s) {
         View v = li.inflate(R.layout.fragment_home_media, vg, false);
         titleView = v.findViewById(R.id.media_title);
+        artistView = v.findViewById(R.id.media_artist);
         playPause = v.findViewById(R.id.btn_play_pause);
         next = v.findViewById(R.id.btn_next);
         prev = v.findViewById(R.id.btn_prev);
@@ -226,6 +228,7 @@ public class HomeMediaControllerFragment extends Fragment {
         if (!enabled) {
             // when disabled, make sure controls are inactive
             titleView.setText("No media");
+            if (artistView != null) artistView.setText("");
             playPause.setEnabled(false);
             next.setEnabled(false);
             prev.setEnabled(false);
@@ -243,14 +246,19 @@ public class HomeMediaControllerFragment extends Fragment {
         }
 
         if (hasControllers && selectedController != null && selectedController.getMetadata() != null) {
-            CharSequence title = selectedController.getMetadata().getDescription().getTitle();
+            android.media.MediaMetadata md = selectedController.getMetadata();
+            CharSequence title = md.getDescription().getTitle();
+            CharSequence artist = md.getDescription().getSubtitle();
+            if (artist == null) artist = md.getString(android.media.MediaMetadata.METADATA_KEY_ARTIST);
             titleView.setText(title != null ? title : selectedController.getPackageName());
+            if (artistView != null) artistView.setText(artist != null ? artist : "");
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);
             updatePlayPauseIcon();
         } else {
             titleView.setText("No media");
+            if (artistView != null) artistView.setText("");
             // enable controls so user can attempt play, but keep them safe (controllers may be null)
             playPause.setEnabled(selectedController != null);
             next.setEnabled(selectedController != null);

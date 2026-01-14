@@ -20,6 +20,7 @@ Slauncher is a lightweight Android launcher focused on simplicity, privacy, and 
 - **Ad-free**: no ads anywhere in the launcher.
 - **Privacy-respecting**: does not collect or send user data.
 - **Custom fonts**: choose and apply fonts from settings.
+- **Media Player**: play media from a minimal widget on home.
 
 ## License
 

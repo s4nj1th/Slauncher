@@ -248,10 +248,38 @@ public class HomeMediaControllerFragment extends Fragment {
         if (hasControllers && selectedController != null && selectedController.getMetadata() != null) {
             android.media.MediaMetadata md = selectedController.getMetadata();
             CharSequence title = md.getDescription().getTitle();
-            CharSequence artist = md.getDescription().getSubtitle();
-            if (artist == null) artist = md.getString(android.media.MediaMetadata.METADATA_KEY_ARTIST);
+
+            // Use description.subtitle if it already contains both artist and album (e.g. "Artist - Album").
+            String info = null;
+            CharSequence subtitle = md.getDescription().getSubtitle();
+            if (subtitle != null && subtitle.length() > 0) {
+                String sub = subtitle.toString().trim();
+                if (sub.contains(" - ")) {
+                    info = sub;
+                } else {
+                    // treat subtitle as artist candidate
+                    String artistStr = sub;
+                    String albumStr = null;
+                    try { albumStr = md.getString(android.media.MediaMetadata.METADATA_KEY_ALBUM); } catch (Exception ignored) { }
+                    if (albumStr != null && !albumStr.isEmpty()) info = artistStr + " - " + albumStr.trim(); else info = artistStr;
+                }
+            } else {
+                // no subtitle: try artist + album
+                String artistStr = null;
+                try { artistStr = md.getString(android.media.MediaMetadata.METADATA_KEY_ARTIST); } catch (Exception ignored) { }
+                String albumStr = null;
+                try { albumStr = md.getString(android.media.MediaMetadata.METADATA_KEY_ALBUM); } catch (Exception ignored) { }
+                if (artistStr != null && !artistStr.isEmpty()) {
+                    if (albumStr != null && !albumStr.isEmpty()) info = artistStr.trim() + " - " + albumStr.trim(); else info = artistStr.trim();
+                } else if (albumStr != null && !albumStr.isEmpty()) {
+                    info = albumStr.trim();
+                } else {
+                    info = "";
+                }
+            }
+
             titleView.setText(title != null ? title : selectedController.getPackageName());
-            if (artistView != null) artistView.setText(artist != null ? artist : "");
+            if (artistView != null) artistView.setText(info);
             playPause.setEnabled(true);
             next.setEnabled(true);
             prev.setEnabled(true);

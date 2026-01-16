@@ -17,8 +17,8 @@ android {
         applicationId "app.slauncher"
         minSdkVersion 24
         targetSdkVersion 35
-        versionCode 103
-        versionName "v0.1.3"
+        versionCode 104
+        versionName "v0.1.4"
 
         resourceConfigurations += ["en", "ar", "de", "es-rES", "es-rUS", "fr", "he", "hr", "hu", "in", "it", "ja", "pl", "pt-rBR", "ru-rRU", "sv", "tr", "uk", "zh"]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

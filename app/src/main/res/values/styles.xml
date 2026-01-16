@@ -81,6 +81,14 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextLarger" parent="TextDefault">
+        <item name="android:textSize">@dimen/text_larger</item>
+    </style>
+
+    <style name="TextLargerBold" parent="TextLarger">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextSmall" parent="TextDefault">
         <item name="android:textSize">@dimen/text_small</item>
     </style>

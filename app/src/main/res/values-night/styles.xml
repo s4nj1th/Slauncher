@@ -77,6 +77,14 @@
         <item name="android:textSize">@dimen/text_large</item>
     </style>
 
+    <style name="TextLarger" parent="TextDefault">
+        <item name="android:textSize">@dimen/text_larger</item>
+    </style>
+
+    <style name="TextLargerBold" parent="TextLarger">
+        <item name="android:textStyle">bold</item>
+    </style>
+    
     <style name="TextMedium" parent="TextDefault">
         <item name="android:textSize">20sp</item>
     </style>

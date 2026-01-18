@@ -1,7 +1,12 @@
 <div align="center">
-    <img src="fastlane/metadata/android/en-US/images/icon.png" width="192"/>
     <h1>Slauncher</h1>
     <p>A minimal, privacy-first Android launcher.</p>
+    <br />
+    <img src="fastlane/metadata/android/en-US/images/icon.png" width="192"/>
+    
+    
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/en/packages/app.slauncher)
+
 </div>
 
 Slauncher is a lightweight Android launcher focused on simplicity, privacy, and customization. It is designed to stay out of your way and give you the essentials without ads or data collection.
